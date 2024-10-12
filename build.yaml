@@ -1,5 +1,5 @@
 include:
-  - board: nice_nano_v2
+  - board: promicro
     shield: mini18_left
-  - board: nice_nano_v2
+  - board: promicro
     shield: mini18_right
