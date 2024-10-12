@@ -7,5 +7,5 @@
 #include "mini18.dtsi"
 
 &default_transform {
-	col-offset = <9>;
+	col-offset = <3>;
 };
