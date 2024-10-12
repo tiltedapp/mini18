@@ -1,26 +1,19 @@
 # Copyright (c) 2020 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-if SHIELD_MINI18_LEFT || SHIELD_MINI18_RIGHT
-
-config ZMK_KEYBOARD_NAME
-	default "mini18"
-
-endif
-
-if SHIELD_MINI18_RIGHT
-
-config ZMK_SPLIT
-	default y
-
-endif
-
 if SHIELD_MINI18_LEFT
 
-config ZMK_SPLIT
-	default y
+config ZMK_KEYBOARD_NAME
+    default "Lil Keyboard"
 
-config ZMK_SPLIT_BLE_ROLE_CENTRAL
-	default y
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif
+
+if SHIELD_MINI18_LEFT || SHIELD_MINI18_RIGHT
+
+config ZMK_SPLIT
+    default y
 
 endif
