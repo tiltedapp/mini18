@@ -82,7 +82,7 @@
             bindings = <
                 &kp V   &kp W    &kp M                          &kp Y           &kp F   &kp Z
                 &kp J   &kp P    &kp K                          &kp B           &kp Q   &kp X
-                &none   &none    &mt LSHIFT NONE                &mt RCMD NONE   &none   &none
+                &none   &none    &mt LSHIFT NONE                &hm RGUI NONE   &none   &none
             >;
         };
         nums { // L2
