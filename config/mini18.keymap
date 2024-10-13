@@ -16,6 +16,10 @@
     release-after-ms = <2000>;
 };
 
+&mt {
+    tapping-term-ms = <400>;
+};
+
 / {
     combos {
         compatible = "zmk,combos";
@@ -23,6 +27,30 @@
             timeout-ms = <50>;
             key-positions = <13 16>;
             bindings = <&kp ENTER>;
+        };
+    combo_num_seven {
+        timeout-ms = <50>;
+        key-positions = <3 4>;
+        bindings = <&kp N7>;
+        layers = <2>;
+        };
+    combo_num_eight {
+        timeout-ms = <50>;
+        key-positions = <4 5>;
+        bindings = <&kp N8>;
+        layers = <2>;
+        };
+    combo_num_nine {
+        timeout-ms = <50>;
+        key-positions = <9 10>;
+        bindings = <&kp N9>;
+        layers = <2>;
+        };
+    combo_num_zero {
+        timeout-ms = <50>;
+        key-positions = <10 11>;
+        bindings = <&kp N0>;
+        layers = <2>;
         };
     };
 
@@ -38,9 +66,9 @@
 // |   I + CMD   |  SPACE + MEH  |  Tab + Shift | //    // |     L1      |   BCK + CNTRL  |      C      | //
 // ---------------------------------------------- //    // ---------------------------------------------- //
             bindings = <
-        &kp L   &kp G                    &kp D                &kp H         &kp U                  &kp O
-        &kp S   &kp R                    &kp T                &kp N         &kp E                  &kp A
-        &kp I   &mt LC(LS(LALT)) SPACE   &mt LSHIFT TAB       &lt 1 RCMD    &mt RCTRL BACKSPACE    &kp C
+        &kp L   &kp G                    &kp D                &kp H             &kp U                  &kp O
+        &kp S   &kp R                    &lt 2 T              &lt 2 N           &kp E                  &kp A
+        &kp I   &mt LC(LS(LALT)) SPACE   &mt LSHIFT TAB       &mt RCMD (&lt 1)  &mt RCTRL BACKSPACE    &kp C
             >;
         };
         alphas { // L1
@@ -49,12 +77,12 @@
 // ---------------------------------------------- //    // ---------------------------------------------- //
 // |      J      |       P       |      K       | //    // |      B      |        Q       |      X      | //
 // ---------------------------------------------- //    // ---------------------------------------------- //
-// |    COMMAND  |  SPACE + MEH  |  Tab + Shift | //    // |             |   BCK + CNTRL  |   COMMAND   | //
+// |    COMMAND  |               |              | //    // |             |                |   COMMAND   | //
 // ---------------------------------------------- //    // ---------------------------------------------- //
             bindings = <
-                &kp V   &kp W    &kp M                             &kp Y    &kp F    &kp Z
-                &kp J   &kp P    &kp K                             &kp B    &kp Q    &kp X
-                &trans  &trans   &trans                            &trans   &trans   &trans
+                &kp V   &kp W    &kp M                          &kp Y           &kp F   &kp Z
+                &kp J   &kp P    &kp K                          &kp B           &kp Q   &kp X
+                &none   &none    &mt LSHIFT NONE                &hm RCMD NONE   &none   &none
             >;
         };
         nums { // L2
@@ -66,9 +94,9 @@
 // |             |                |             | //    // |             |                |             | //
 // ---------------------------------------------- //    // ---------------------------------------------- //
             bindings = <
-                &trans   &trans    &trans                             &trans    &trans    &trans
-                &trans   &trans    &trans                             &trans    &trans    &trans
-                &trans   &trans    &trans                             &trans    &trans    &trans
+                &none       &kp UP      &none                         &kp N4    &kp N5            &kp N6
+                &kp LEFT    &kp DOWN    &kp RIGHT                     &kp N1    &kp N2            &kp N3
+                &none       &kp SPACE   &none                         &none     &kp BACKSPACE     &kp N0
             >;
         };
     };
