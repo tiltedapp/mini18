@@ -40,7 +40,7 @@
             bindings = <
         &kp L   &kp G                    &kp D                &kp H         &kp U                  &kp O
         &kp S   &kp R                    &kp T                &kp N         &kp E                  &kp A
-        &kp I   &mt LC(LS(LALT)) SPACE   &mt LSHIFT TAB       &lt 1 RCMD    &mt RCTRL BACKSPACE    &kp C
+        &kp I   &mt LC(LS(LALT)) SPACE   &mt LSHIFT TAB       &lt 1 RGUI    &mt RCTRL BACKSPACE    &kp C
             >;
         };
         alphas { // L1
