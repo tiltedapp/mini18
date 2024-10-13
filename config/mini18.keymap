@@ -5,11 +5,37 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        default_layer { // Layer 0
+// ----------------------------------------------     // ----------------------------------------------
+// |      Z      |        M       |      K      |     // |      Z      |        M       |      K      |
+// |    &mo 1    |   LEFT SHIFT   |    &mo 2    |     // |      Z      |        M       |      K      |
+// |    &mo 1    |   LEFT SHIFT   |    &mo 2    |     // |    &mo 1    |   LEFT SHIFT   |    &mo 2    |
             bindings = <
-                &kp Q &kp W &kp E   &kp R &kp T &kp Y
-                &kp A &kp S &kp D   &kp F &kp G &kp H
-                &kp Z &kp P &kp I   &kp C &kp Z &kp J
+                &trans   &trans    &trans             &trans    &trans    &trans
+                &trans   &trans    &trans             &trans    &trans    &trans
+                &trans   &trans    &trans             &trans    &trans    &trans
+            >;
+        };
+        abc { // Layer 1
+// ----------------------------------------------     // ----------------------------------------------
+// |      Z      |        M       |      K      |     // |      Z      |        M       |      K      |
+// |    &mo 1    |   LEFT SHIFT   |    &mo 2    |     // |      Z      |        M       |      K      |
+// |    &mo 1    |   LEFT SHIFT   |    &mo 2    |     // |    &mo 1    |   LEFT SHIFT   |    &mo 2    |
+            bindings = <
+                &trans   &trans    &trans             &trans    &trans    &trans
+                &trans   &trans    &trans             &trans    &trans    &trans
+                &trans   &trans    &trans             &trans    &trans    &trans
+            >;
+        };
+        xyz { // Layer 2
+// ----------------------------------------------     // ----------------------------------------------
+// |      Z      |        M       |      K      |     // |      Z      |        M       |      K      |
+// |    &mo 1    |   LEFT SHIFT   |    &mo 2    |     // |      Z      |        M       |      K      |
+// |    &mo 1    |   LEFT SHIFT   |    &mo 2    |     // |    &mo 1    |   LEFT SHIFT   |    &mo 2    |
+            bindings = <
+                &trans   &trans    &trans             &trans    &trans    &trans
+                &trans   &trans    &trans             &trans    &trans    &trans
+                &trans   &trans    &trans             &trans    &trans    &trans
             >;
         };
     };
