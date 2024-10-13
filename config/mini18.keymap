@@ -21,7 +21,7 @@
 // |   I + CMD   |  SPACE + MEH  |  Tab + Shift | //    // |     L1      |   BCK + CNTRL  |      C      | //
 // ---------------------------------------------- //    // ---------------------------------------------- //
             bindings = <
-                &trans   &trans    &trans                             &trans    &trans    &trans
+                &kp L   &trans    &trans                             &trans    &trans    &trans
                 &trans   &trans    &trans                             &trans    &trans    &trans
                 &trans   &trans    &trans                             &trans    &trans    &trans
             >;
