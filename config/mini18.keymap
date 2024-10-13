@@ -68,7 +68,7 @@
             bindings = <
         &kp L   &kp G                    &kp D                &kp H             &kp U                  &kp O
         &kp S   &kp R                    &lt 2 T              &lt 2 N           &kp E                  &kp A
-        &kp I   &mt LC(LS(LALT)) SPACE   &mt LSHIFT TAB       &mt RCMD (&lt 1)  &mt RCTRL BACKSPACE    &kp C
+        &kp I   &mt LC(LS(LALT)) SPACE   &mt LSHIFT TAB       &mt RCMD &lt 1  &mt RCTRL BACKSPACE    &kp C
             >;
         };
         alphas { // L1
