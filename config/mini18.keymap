@@ -1,3 +1,10 @@
+//  _   _  ____   _____ _____
+// | \ | |/ __ \ / ____/ ____|
+// |  \| | |  | | |   | |
+// | . ` | |  | | |   | |
+// | |\  | |__| | |___| |____
+// |_| \_|\____/ \_____\_____|
+
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
@@ -5,37 +12,46 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer { // Layer 0
-// ----------------------------------------------     // ----------------------------------------------
-// |      Z      |        M       |      K      |     // |      Z      |        M       |      K      |
-// |    &mo 1    |   LEFT SHIFT   |    &mo 2    |     // |      Z      |        M       |      K      |
-// |    &mo 1    |   LEFT SHIFT   |    &mo 2    |     // |    &mo 1    |   LEFT SHIFT   |    &mo 2    |
+        default_layer { // L0
+// ---------------------------------------------- //    // ---------------------------------------------- //
+// |      L      |       G       |      D       | //    // |      H      |        U       |      O      | //
+// ---------------------------------------------- //    // ---------------------------------------------- //
+// |      S      |       R       |    T + L2    | //    // |   N + L2    |        E       |      A      | //
+// ---------------------------------------------- //    // ---------------------------------------------- //
+// |   I + CMD   |  SPACE + MEH  |  Tab + Shift | //    // |     L1      |   BCK + CNTRL  |      C      | //
+// ---------------------------------------------- //    // ---------------------------------------------- //
             bindings = <
-                &trans   &trans    &trans             &trans    &trans    &trans
-                &trans   &trans    &trans             &trans    &trans    &trans
-                &trans   &trans    &trans             &trans    &trans    &trans
+                &trans   &trans    &trans                             &trans    &trans    &trans
+                &trans   &trans    &trans                             &trans    &trans    &trans
+                &trans   &trans    &trans                             &trans    &trans    &trans
             >;
         };
-        abc { // Layer 1
-// ----------------------------------------------     // ----------------------------------------------
-// |      Z      |        M       |      K      |     // |      Z      |        M       |      K      |
-// |    &mo 1    |   LEFT SHIFT   |    &mo 2    |     // |      Z      |        M       |      K      |
-// |    &mo 1    |   LEFT SHIFT   |    &mo 2    |     // |    &mo 1    |   LEFT SHIFT   |    &mo 2    |
+        alphas { // L1
+// ---------------------------------------------- //    // ---------------------------------------------- //
+// |      V      |       W       |      M       | //    // |      Y      |        F       |      Z      | //
+// ---------------------------------------------- //    // ---------------------------------------------- //
+// |      J      |       P       |      K       | //    // |      B      |        Q       |      X      | //
+// ---------------------------------------------- //    // ---------------------------------------------- //
+// |    COMMAND  |  SPACE + MEH  |  Tab + Shift | //    // |             |   BCK + CNTRL  |   COMMAND   | //
+// ---------------------------------------------- //    // ---------------------------------------------- //
             bindings = <
-                &trans   &trans    &trans             &trans    &trans    &trans
-                &trans   &trans    &trans             &trans    &trans    &trans
-                &trans   &trans    &trans             &trans    &trans    &trans
+                &trans   &trans    &trans                             &trans    &trans    &trans
+                &trans   &trans    &trans                             &trans    &trans    &trans
+                &trans   &trans    &trans                             &trans    &trans    &trans
             >;
         };
-        xyz { // Layer 2
-// ----------------------------------------------     // ----------------------------------------------
-// |      Z      |        M       |      K      |     // |      Z      |        M       |      K      |
-// |    &mo 1    |   LEFT SHIFT   |    &mo 2    |     // |      Z      |        M       |      K      |
-// |    &mo 1    |   LEFT SHIFT   |    &mo 2    |     // |    &mo 1    |   LEFT SHIFT   |    &mo 2    |
+        nums { // L2
+// ---------------------------------------------- //    // ---------------------------------------------- //
+// |             |       UP       |             | //    // |      4      |        5       |      6      | //
+// ---------------------------------------------- //    // ---------------------------------------------- //
+// |     LEFT    |      DOWN      |    RIGHT    | //    // |      1      |        2       |      3      | //
+// ---------------------------------------------- //    // ---------------------------------------------- //
+// |             |                |             | //    // |             |                |             | //
+// ---------------------------------------------- //    // ---------------------------------------------- //
             bindings = <
-                &trans   &trans    &trans             &trans    &trans    &trans
-                &trans   &trans    &trans             &trans    &trans    &trans
-                &trans   &trans    &trans             &trans    &trans    &trans
+                &trans   &trans    &trans                             &trans    &trans    &trans
+                &trans   &trans    &trans                             &trans    &trans    &trans
+                &trans   &trans    &trans                             &trans    &trans    &trans
             >;
         };
     };
