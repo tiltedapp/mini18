@@ -8,6 +8,10 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
+&sl {
+    release-after-ms = <2000>;
+};
+
 / {
     keymap {
         compatible = "zmk,keymap";
@@ -23,7 +27,7 @@
             bindings = <
                 &kp L   &kp G    &kp D                             &kp H    &kp U    &kp O
                 &kp S   &kp R    &kp T                             &kp N    &kp E    &kp A
-                &kp I   &trans    &trans                           &trans    &trans    &kp C
+                &kp I   &trans   &trans                            &sl 1    &trans   &kp C
             >;
         };
         alphas { // L1
@@ -37,7 +41,7 @@
             bindings = <
                 &kp V   &kp W    &kp M                             &kp Y    &kp F    &kp Z
                 &kp J   &kp P    &kp K                             &kp B    &kp Q    &kp X
-                &trans  &trans   &trans                            &trans   &trans   &trans
+                &trans  &trans   &key_repeat                       &trans   &trans   &trans
             >;
         };
         nums { // L2
