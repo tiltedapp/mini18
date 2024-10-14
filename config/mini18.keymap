@@ -64,7 +64,7 @@
     //Output: Enter
     combo_space_backspace {
         timeout-ms = <50>;
-        key-positions = <14 15>;
+        key-positions = <13 16>;
         bindings = <&kp ENTER>;
         layers = <0>;
         };
@@ -116,9 +116,9 @@
 // |   I + CMD   |  SPACE + MEH  |  Tab + Shift | //    // |     L1      |   BCK + CNTRL  |      C      | //
 // ---------------------------------------------- //    // ---------------------------------------------- //
             bindings = <
-&kp L        &kp G            &kp D                      &kp H                &kp U               &kp O
-&kp S        &kp R            &lt 2 T                    &lt 2 N              &kp E               &kp A
-&mt LCMD I   &mt LSHIFT TAB   &mt LC(LS(LALT)) SPACE     &mt RCTRL BACKSPACE  &sl_ignore_mods 1   &mt RCMD C
+&kp L        &kp G                    &kp D              &kp H                &kp U               &kp O
+&kp S        &kp R                    &lt 2 T            &lt 2 N              &kp E               &kp A
+&mt LCMD I   &mt LC(LS(LALT)) SPACE   &mt LSHIFT TAB     &mt RCTRL BACKSPACE  &sl_ignore_mods 1   &mt RCMD C
             >;
         };
         alphas { // L1
