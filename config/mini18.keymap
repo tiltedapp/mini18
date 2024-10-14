@@ -22,6 +22,15 @@
 };
 
 / {
+    behaviors {
+        sl_ignore_mods: sticky_layer_ignore_mods {
+            compatible = "zmk,behavior-sticky-key";
+            #binding-cells = <1>;
+            bindings = <&mo>;
+            release-after-ms = <1000>;
+            ignore-modifiers;
+        };
+    };
     combos {
         compatible = "zmk,combos";
     combo_space_backspace {
@@ -66,9 +75,9 @@
 // |   I + CMD   |  SPACE + MEH  |  Tab + Shift | //    // |     L1      |   BCK + CNTRL  |      C      | //
 // ---------------------------------------------- //    // ---------------------------------------------- //
             bindings = <
-  &kp L        &kp G                        &kp D                            &kp H                &kp U   &kp O
-  &kp S        &kp R                        &lt 2 T                          &lt 2 N              &kp E   &kp A
-  &mt LCMD I   &mt LSHIFT &lt 1 CAPS_WORD   &mt LC(LS(LALT)) SPACE           &mt RCTRL BACKSPACE  &sl 1   &mt RCMD C
+  &kp L        &kp G            &kp D                            &kp H                &kp U               &kp O
+  &kp S        &kp R            &lt 2 T                          &lt 2 N              &kp E               &kp A
+  &mt LCMD I   &mt LSHIFT TAB   &mt LC(LS(LALT)) SPACE           &mt RCTRL BACKSPACE  &sl_ignore_mods 1   &mt RCMD C
             >;
         };
         alphas { // L1
