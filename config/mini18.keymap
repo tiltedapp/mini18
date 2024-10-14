@@ -26,7 +26,7 @@
         compatible = "zmk,combos";
     combo_space_backspace {
         timeout-ms = <50>;
-        key-positions = <13 16>;
+        key-positions = <14 15>;
         bindings = <&kp ENTER>;
         };
     combo_num_seven {
@@ -66,9 +66,9 @@
 // |   I + CMD   |  SPACE + MEH  |  Tab + Shift | //    // |     L1      |   BCK + CNTRL  |      C      | //
 // ---------------------------------------------- //    // ---------------------------------------------- //
             bindings = <
-  &kp L        &kp G                    &kp D                       &kp H                &kp U   &kp O
-  &kp S        &kp R                    &lt 2 T                     &lt 2 N              &kp E   &kp A
-  &mt LCMD I   &mt LC(LS(LALT)) SPACE   &mt LSHIFT TAB              &mt RCTRL BACKSPACE  &sl 1   &mt RCMD C
+  &kp L        &kp G                        &kp D                            &kp H                &kp U   &kp O
+  &kp S        &kp R                        &lt 2 T                          &lt 2 N              &kp E   &kp A
+  &mt LCMD I   &mt LSHIFT &lt 1 CAPS_WORD   &mt LC(LS(LALT)) SPACE           &mt RCTRL BACKSPACE  &sl 1   &mt RCMD C
             >;
         };
         alphas { // L1
@@ -82,7 +82,7 @@
             bindings = <
                 &kp V   &kp W    &kp M                                  &kp Y   &kp F   &kp Z
                 &kp J   &kp P    &kp K                                  &kp B   &kp Q   &kp X
-                &none   &trans   &trans                                 &trans  &trans  &none
+                &trans  &trans   &trans                                 &trans  &trans  &trans
             >;
         };
         nums { // L2
@@ -94,9 +94,9 @@
 // |             |                |             | //    // |             |                |             | //
 // ---------------------------------------------- //    // ---------------------------------------------- //
             bindings = <
-           &none       &kp UP       &none                              &kp N4    &kp N5   &kp N6
-           &kp LEFT    &kp DOWN     &kp RIGHT                          &kp N1    &kp N2   &kp N3
-           &none       &none        &none                              &none     &none    &kp N0
+           &none       &kp UP       &none                              &kp N4   &kp N5   &kp N6
+           &kp LEFT    &kp DOWN     &kp RIGHT                          &kp N1   &kp N2   &kp N3
+           &none       &none        &none                              &none    &none    &kp N0
             >;
         };
     };
