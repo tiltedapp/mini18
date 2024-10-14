@@ -66,9 +66,9 @@
 // |   I + CMD   |  SPACE + MEH  |  Tab + Shift | //    // |     L1      |   BCK + CNTRL  |      C      | //
 // ---------------------------------------------- //    // ---------------------------------------------- //
             bindings = <
-  &kp L   &kp G                    &kp D                    &kp H     &kp U                         &kp O
-  &kp S   &kp R                    &lt 2 T                  &lt 2 N   &kp E                         &kp A
-  &kp I   &mt LC(LS(LALT)) SPACE   &mt LEFT_SHIFT TAB       &sk 1     &mt RIGHT_CONTROL BACKSPACE   &kp C
+  &kp L   &kp G                    &kp D                    &kp H    &kp U   &kp O
+  &kp S   &kp R                    &lt 2 T                  &lt 2 N  &kp E   &kp A
+  &kp I   &mt LC(LS(LALT)) SPACE   &mt LEFT_SHIFT TAB       &mt LCMD &sk 1   &mt RIGHT_CONTROL BACKSPACE   &kp C
             >;
         };
         alphas { // L1
