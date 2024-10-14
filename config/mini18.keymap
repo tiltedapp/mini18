@@ -61,46 +61,34 @@
     };
     combos {
         compatible = "zmk,combos";
-    //Output: Enter
     combo_space_backspace {
         timeout-ms = <50>;
         key-positions = <13 16>;
         bindings = <&kp ENTER>;
         layers = <0>;
         };
-    //Output: ESC
     combo_esc {
         timeout-ms = <50>;
         key-positions = <4 5>;
         bindings = <&kp ESCAPE>;
         layers = <0>;
         };
-    //Output: ,
     combo_comma {
         timeout-ms = <50>;
         key-positions = <3 5>;
         bindings = <&kp COMMA>;
         layers = <0>;
         };
-    //Output: :
     combo_colon {
         timeout-ms = <50>;
         key-positions = <3 4>;
         bindings = <&kp COLON>;
         layers = <0>;
         };
-    //Output: ;
     combo_semi_colon {
         timeout-ms = <50>;
         key-positions = <9 10>;
         bindings = <&kp SEMICOLON>;
-        layers = <0>;
-        };
-    //Output: .
-    combo_esc {
-        timeout-ms = <50>;
-        key-positions = <10 11>;
-        bindings = <&kp PERIOD>;
         layers = <0>;
         };
     combo_period {
@@ -113,11 +101,11 @@
         key-positions = <9 11>;
         bindings = <&kp FSLH>;
         };
-combo_dollar {
-    timeout-ms = <50>;
-    key-positions = <4 11>;
-    bindings = <&kp DLLR>;
-};
+    combo_dollar {
+        timeout-ms = <50>;
+        key-positions = <4 11>;
+        bindings = <&kp DLLR>;
+    };
 combo_percent {
     timeout-ms = <50>;
     key-positions = <4 9>;
