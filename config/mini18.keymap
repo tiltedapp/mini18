@@ -15,6 +15,11 @@
 
 / {
     behaviors {
+        last_key: last_key {
+            compatible = "zmk,behavior-last-key";
+            label = "LAST_KEY";
+            #binding-cells = <0>;
+        };
         //Activates layer 1
         //Switches back to home layer upon press
         //Ignores Mod keys
@@ -59,18 +64,17 @@
             bindings = <&kp>, <&sk>;
         };
     };
-        macros {
+    macros {
         repeat_last_key: repeat_last_key {
             label = "REPEAT_LAST_KEY";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_tap &kp MACRO_LAST>
+                = <&last_key>
                 ;
         };
-    };
+    };;
     combos {
-        compatible = "zmk,combos";
         compatible = "zmk,combos";
     combo_repeat_last_key {
         timeout-ms = <50>;
