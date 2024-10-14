@@ -13,16 +13,11 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
-&sl {
-    release-after-ms = <2000>;
-};
-
-&mt {
-    tapping-term-ms = <400>;
-};
-
 / {
     behaviors {
+        //Activates layer 1
+        //Switches back to home layer upon press
+        //Ignores Mod keys
         sl_ignore_mods: sticky_layer_ignore_mods {
             compatible = "zmk,behavior-sticky-key";
             #binding-cells = <1>;
@@ -30,7 +25,32 @@
             release-after-ms = <1000>;
             ignore-modifiers;
         };
+        //Does not deactivate layer
+        //When tapped, next key is Left Shift + Key
+        //If held Left Shift Key
         layer_shift: layer_shift {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&sk>;
+        };
+        //Does not deactivate layer
+        //When tapped, next key is Left Command + Key
+        //If held Left Command Key
+         lcmd_sticky_hold: lcmd_sticky_hold {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&sk>;
+        };
+        //Does not deactivate layer
+        //When tapped, next key is Right Command + Key
+        //If held Right Command Key
+         rcmd_sticky_hold: rcmd_sticky_hold {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -45,6 +65,18 @@
         timeout-ms = <50>;
         key-positions = <14 15>;
         bindings = <&kp ENTER>;
+        };
+    combo_colon {
+        timeout-ms = <50>;
+        key-positions = <3 4>;
+        bindings = <&kp COLON>;
+        layers = <1>;
+        };
+    combo_esc {
+        timeout-ms = <50>;
+        key-positions = <4 5>;
+        bindings = <&kp ESCAPE>;
+        layers = <1>;
         };
     combo_num_seven {
         timeout-ms = <50>;
@@ -83,9 +115,9 @@
 // |   I + CMD   |  SPACE + MEH  |  Tab + Shift | //    // |     L1      |   BCK + CNTRL  |      C      | //
 // ---------------------------------------------- //    // ---------------------------------------------- //
             bindings = <
-  &kp L        &kp G            &kp D                            &kp H                &kp U               &kp O
-  &kp S        &kp R            &lt 2 T                          &lt 2 N              &kp E               &kp A
-  &mt LCMD I   &mt LSHIFT TAB   &mt LC(LS(LALT)) SPACE           &mt RCTRL BACKSPACE  &sl_ignore_mods 1   &mt RCMD C
+&kp L        &kp G            &kp D                      &kp H                &kp U               &kp O
+&kp S        &kp R            &lt 2 T                    &lt 2 N              &kp E               &kp A
+&mt LCMD I   &mt LSHIFT TAB   &mt LC(LS(LALT)) SPACE     &mt RCTRL BACKSPACE  &sl_ignore_mods 1   &mt RCMD C
             >;
         };
         alphas { // L1
@@ -94,12 +126,12 @@
 // ---------------------------------------------- //    // ---------------------------------------------- //
 // |      J      |       P       |      K       | //    // |      B      |        Q       |      X      | //
 // ---------------------------------------------- //    // ---------------------------------------------- //
-// |    COMMAND  |               |              | //    // |             |                |   COMMAND   | //
+// |   COMMAND   |   OSM SHIFT   |              | //    // |             |      NONE      |   COMMAND   | //
 // ---------------------------------------------- //    // ---------------------------------------------- //
             bindings = <
-                &kp V   &kp W    &kp M                                  &kp Y   &kp F   &kp Z
-                &kp J   &kp P    &kp K                                  &kp B   &kp Q   &kp X
-                &trans  &layer_shift LSHIFT LSHIFT   &trans             &trans  &none  &trans
+&kp V   &kp W                &kp M                                   &kp Y   &kp F   &kp Z
+&kp J   &kp P                &kp K                                   &kp B   &kp Q   &kp X
+&lcmd_sticky_hold LCMD LCMD  &layer_shift LSHIFT LSHIFT   &none      &none   &none  &rcmd_sticky_hold RCMD RCMD
             >;
         };
         nums { // L2
