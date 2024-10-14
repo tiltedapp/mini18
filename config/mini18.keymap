@@ -59,8 +59,24 @@
             bindings = <&kp>, <&sk>;
         };
     };
+        macros {
+        repeat_last_key: repeat_last_key {
+            label = "REPEAT_LAST_KEY";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp MACRO_LAST>
+                ;
+        };
+    };
     combos {
         compatible = "zmk,combos";
+        compatible = "zmk,combos";
+    combo_repeat_last_key {
+        timeout-ms = <50>;
+        key-positions = <15 17>;
+        bindings = <&repeat_last_key>;
+        };
     combo_space_backspace {
         timeout-ms = <50>;
         key-positions = <13 16>;
@@ -311,7 +327,7 @@
             bindings = <
            &none    &none   &none                              &kp C   &kp I   &kp W
            &none    &none   &none                              &kp H   &kp J   &kp K
-           &none    &none   &none                              &none   &none    &kp L
+           &none    &none   &none                              &kp Y   &kp P    &kp L
             >;
         };
     };
