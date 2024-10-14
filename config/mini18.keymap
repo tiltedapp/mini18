@@ -5,12 +5,13 @@
 // | |\  | |__| | |___| |____
 // |_| \_|\____/ \_____\_____|
 
-#include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
 // Matrix: Key Numbers
 //  0  1  2  3  4  5
 //  6  7  8  9 10 11
 // 12 13 14 15 16 17
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
 
 &sl {
     release-after-ms = <2000>;
@@ -65,7 +66,6 @@
 
     keymap {
         compatible = "zmk,keymap";
-
         default_layer { // L0
 // ---------------------------------------------- //    // ---------------------------------------------- //
 // |      L      |       G       |      D       | //    // |      H      |        U       |      O      | //
@@ -89,9 +89,9 @@
 // |    COMMAND  |               |              | //    // |             |                |   COMMAND   | //
 // ---------------------------------------------- //    // ---------------------------------------------- //
             bindings = <
-                &kp V   &kp W    &kp M                          &kp Y   &kp F   &kp Z
-                &kp J   &kp P    &kp K                          &kp B   &kp Q   &kp X
-                &none   &none    &none                          &none   &none   &none
+                &kp V   &kp W    &kp M                                  &kp Y   &kp F   &kp Z
+                &kp J   &kp P    &kp K                                  &kp B   &kp Q   &kp X
+                &none   &trans   &trans                                 &trans  &trans  &none
             >;
         };
         nums { // L2
@@ -103,9 +103,9 @@
 // |             |                |             | //    // |             |                |             | //
 // ---------------------------------------------- //    // ---------------------------------------------- //
             bindings = <
-           &none       &kp UP      &none                         &kp N4    &kp N5            &kp N6
-           &kp LEFT    &kp DOWN    &kp RIGHT                     &kp N1    &kp N2            &kp N3
-           &none       &kp SPACE   &none                         &none     &kp BACKSPACE     &kp N0
+           &none       &kp UP       &none                              &kp N4    &kp N5   &kp N6
+           &kp LEFT    &kp DOWN     &kp RIGHT                          &kp N1    &kp N2   &kp N3
+           &none       &none        &none                              &none     &none    &kp N0
             >;
         };
     };
