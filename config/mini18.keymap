@@ -394,7 +394,7 @@
 // |             |                |             | //    // |      Y      |        P       |      L      | //
 // ---------------------------------------------- //    // ---------------------------------------------- //
             bindings = <
-           &BT_CLR_ALL    &none   &none                              &kp C   &kp I   &kp W
+           &bt BT_CLR    &none   &none                              &kp C   &kp I   &kp W
            &none          &none   &none                              &kp H   &kp J   &kp K
            &none          &none   &none                              &kp Y   &kp P    &kp L
             >;
