@@ -30,17 +30,6 @@
             release-after-ms = <1000>;
             ignore-modifiers;
         };
-        //Only active on Layer 1
-        //Tapped: Next key is Left Shift + Key
-        //Held: Left Shift Key
-        layer_shift: layer_shift {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&sk>;
-        };
         //Does not deactivate layer
         //When tapped, next key is Left Command + Key
         //If held Left Command Key
@@ -81,22 +70,31 @@
 // Function Combos                   //
 // ********************************* //
 
-    //Next  Key is Shifted
-    //Layer 0 Only
-    combo_shift_next {
+    //Next  Key on Layer 0 is Shifted
+    //Initiated on Layer 0
+    combo_layer_0_shift_next {
         timeout-ms = <50>;
-        key-positions = <12 14>;
+        key-positions = <13 0>;
         bindings = <&sk LSHFT>;
         layers = <0>;
     };
+    //Next Key on Layer 1 is Shifted
+    //Initiated on Layer 0
+    combo_layer_1_shift_next {
+        timeout-ms = <50>;
+        key-positions = <5 16>;
+        bindings = <&sl_ignore_mods 1 &sk LSHIFT>;
+        layers = <0>;
+    };
+   //Initiated on Layer 1
    //Output: Repeat Last Key
     combo_repeat_last_key {
         timeout-ms = <50>;
-        key-positions = <15 17>;
+        key-positions = <16 17>;
         bindings = <&key_repeat>;
         };
-   //Output: Backspace
-    combo_space_backspace {
+   //Output: Enter
+    combo_enter {
         timeout-ms = <50>;
         key-positions = <13 16>;
         bindings = <&kp ENTER>;
@@ -391,9 +389,9 @@
 // |   COMMAND   |     NONE      |    SHIFT     | //    // |    NONE     |      NONE      |   COMMAND   | //
 // ---------------------------------------------- //    // ---------------------------------------------- //
             bindings = <
-&kp V                        &kp W  &kp M                              &kp Y   &kp F   &kp Z
-&kp J                        &kp P  &kp K                              &kp B   &kp Q   &kp X
-&lcmd_sticky_hold LCMD LCMD  &none  &layer_shift LSHIFT LSHIFT         &rcntrl_sticky_hold RIGHT_CONTROL RIGHT_CONTROL  &none  &rcmd_sticky_hold RCMD RCMD
+&kp V                        &kp W  &kp M                  &kp Y   &kp F   &kp Z
+&kp J                        &kp P  &kp K                  &kp B   &kp Q   &kp X
+&lcmd_sticky_hold LCMD LCMD  &none  &none                  &rcntrl_sticky_hold RIGHT_CONTROL RIGHT_CONTROL  &none  &rcmd_sticky_hold RCMD RCMD
             >;
         };
         nums { // L2
