@@ -394,9 +394,9 @@
 // |             |                |             | //    // |      Y      |        P       |      L      | //
 // ---------------------------------------------- //    // ---------------------------------------------- //
             bindings = <
-           &bt BT_CLR     &bt BT_NXT  &bt BT_PRV                         &kp C   &kp I   &kp W
-           &bt BT_SEL 1   &none       &none                              &kp H   &kp J   &kp K
-           &none          &none       &none                              &kp Y   &kp P    &kp L
+           &bt BT_CLR     &bt BT_NXT    &bt BT_PRV                         &kp C   &kp I   &kp W
+           &bt BT_SEL 0   &bt BT_SEL 1  &none                              &kp H   &kp J   &kp K
+           &none          &none         &none                              &kp Y   &kp P    &kp L
             >;
         };
     };
