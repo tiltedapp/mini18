@@ -17,7 +17,7 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
-
+#include <dt-bindings/zmk/bt.h>
 / {
     behaviors {
         //Activates Layer 1
@@ -347,13 +347,13 @@
 // ---------------------------------------------- //    // ---------------------------------------------- //
 // |      L      |       G       |      D       | //    // |      H      |        U       |      O      | //
 // ---------------------------------------------- //    // ---------------------------------------------- //
-// |      S      |     R + L3    |    T + L2    | //    // |   N + L2    |        E       |      A      | //
+// |      S      |     R + L3    |    T + L2    | //    // |   N + L2    |     E + L3     |      A      | //
 // ---------------------------------------------- //    // ---------------------------------------------- //
 // |   I + CMD   |  SPACE + MEH  |  Tab + Shift | //    // | BCK + CNTRL |       L1       |   C + CMD   | //
 // ---------------------------------------------- //    // ---------------------------------------------- //
             bindings = <
 &kp L        &kp G                    &kp D              &kp H                &kp U               &kp O
-&kp S        &lt 3 R                  &lt 2 T            &lt 2 N              &kp E               &kp A
+&kp S        &lt 3 R                  &lt 2 T            &lt 2 N              &lt 3 E             &kp A
 &mt LCMD I   &mt LC(LS(LALT)) SPACE   &mt LSHIFT TAB     &mt RCTRL BACKSPACE  &sl_ignore_mods 1   &mt RCMD C
             >;
         };
@@ -394,9 +394,9 @@
 // |             |                |             | //    // |      Y      |        P       |      L      | //
 // ---------------------------------------------- //    // ---------------------------------------------- //
             bindings = <
-           &none    &none   &none                              &kp C   &kp I   &kp W
-           &none    &none   &none                              &kp H   &kp J   &kp K
-           &none    &none   &none                              &kp Y   &kp P    &kp L
+           &BT_CLR_ALL    &none   &none                              &kp C   &kp I   &kp W
+           &none          &none   &none                              &kp H   &kp J   &kp K
+           &none          &none   &none                              &kp Y   &kp P    &kp L
             >;
         };
     };
