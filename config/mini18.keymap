@@ -22,12 +22,11 @@
     behaviors {
 layer1_shift_next: layer1_shift_next {
     compatible = "zmk,behavior-sticky-key";
-    #binding-cells = <1>;  // Change this line
-    bindings = <&mo>, <&sk>;
+    #binding-cells = <1>;
+    bindings = <&mo 1>;
     release-after-ms = <0>;
     quick-release;
     ignore-modifiers;
-    sticky-layers = <1>;
     sticky-key = <(LSHIFT)>;
 };
         //Activates Layer 1
