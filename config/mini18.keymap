@@ -29,9 +29,9 @@
         };
 
         sl_ignore_mods_shift: sl_ignore_mods_shift_behavior {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <1>;
-            bindings = <&sl_ignore_mods_alt>, <&sk LSHIFT>;
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&sl_ignore_mods 1>, <&sk LSHIFT>;
         };
         //Activates Layer 1
         //One shot sticky layer
