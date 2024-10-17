@@ -20,19 +20,6 @@
 #include <dt-bindings/zmk/bt.h>
 / {
     behaviors {
-        sl_ignore_mods_alt: sticky_layer_ignore_mods_alt {
-            compatible = "zmk,behavior-sticky-key";
-            #binding-cells = <1>;
-            bindings = <&mo>;
-            release-after-ms = <1000>;
-            ignore-modifiers;
-        };
-
-        sl_ignore_mods_shift: sl_ignore_mods_shift_behavior {
-    compatible = "zmk,behavior-macro";
-    #binding-cells = <0>;
-    bindings = <&sl_ignore_mods 1>, <&sk LSHIFT>;
-        };
         //Activates Layer 1
         //One shot sticky layer
         //Any key pressed (except mod keys (cmd, shift etc.)) will trigger home layer switch
@@ -82,10 +69,11 @@
 // ********************************* //
 // Function Combos                   //
 // ********************************* //
-    combo_sl_ignore_mods_shift {
+    combo_shift_next_layer_1 {
         timeout-ms = <50>;
         key-positions = <16 4>;
-        bindings = <&sl_ignore_mods_shift 1>;
+        bindings = <&mo 1>, <&sk LSHFT>;
+        layers = <0>;
     };
     //Next  Key on Layer 0 is Shifted
     //Initiated on Layer 0
