@@ -25,10 +25,10 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_tap &sl_ignore_mods 1>
+                = <&macro_tap &to 1>
                 , <&macro_tap &sk LSHIFT>;
         };
-    };
+    }
     behaviors {
         //Activates Layer 1
         //One shot sticky layer
