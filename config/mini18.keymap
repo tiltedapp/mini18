@@ -1,3 +1,10 @@
+//  _   _  ____   _____ _____
+// | \ | |/ __ \ / ____/ ____|
+// |  \| | |  | | |   | |
+// | . ` | |  | | |   | |
+// | |\  | |__| | |___| |____
+// |_| \_|\____/ \_____\_____|
+
 // Matrix: Key Numbers
 //  0  1  2     3  4  5
 //  6  7  8     9 10 11
@@ -13,13 +20,6 @@
 #include <dt-bindings/zmk/bt.h>
 / {
     behaviors {
-        sl_caps: sticky_layer_ignore_mods_caps {
-            compatible = "zmk,behavior-sticky-key";
-            #binding-cells = <1>;
-            bindings = <&mo>;
-            release-after-ms = <1000>;
-            ignore-modifiers;
-        };
         //Activates Layer 1
         //One shot sticky layer
         //Any key pressed (except mod keys (cmd, shift etc.)) will trigger home layer switch
@@ -69,14 +69,7 @@
 // ********************************* //
 // Function Combos                   //
 // ********************************* //
-    //Initiated on Layer 0
-    //Accesses Caps Layer
-    combo_layer_0_shift_next {
-        timeout-ms = <50>;
-        key-positions = <16 4>;
-        bindings = <&sl_caps 1>;
-        layers = <0>;
-    };
+
     //Next  Key on Layer 0 is Shifted
     //Initiated on Layer 0
     combo_layer_0_shift_next {
@@ -421,7 +414,7 @@
            &none          &none         &none                              &kp Y   &kp P    &kp L
             >;
         };
-            alpha_capped { // L4
+        alpha_capped { // L4
 // ---------------------------------------------- //    // ---------------------------------------------- //
 // |      V      |       W       |      M       | //    // |      Y      |        F       |      Z      | //
 // ---------------------------------------------- //    // ---------------------------------------------- //
