@@ -20,13 +20,21 @@
 #include <dt-bindings/zmk/bt.h>
 / {
     behaviors {
-layer1_shift_next: layer1_shift_next {
-    compatible = "zmk,behavior-sticky-key";
-    #binding-cells = <1>;
-    bindings = <&mo>;
-    release-after-ms = <1000>;
-    ignore-modifiers;
-    sticky-key = <(LSHIFT)>;
+    td_layer1_shift: tap_dance_layer1_shift {
+        compatible = "zmk,behavior-tap-dance";
+        #binding-cells = <0>;
+        tapping-term-ms = <200>;
+        bindings = <&sl_shift 1>, <&to 0>;
+    };
+
+    sl_shift: sticky_layer_with_shift {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <1>;
+        bindings
+            = <&macro_press &mo MACRO_PLACEHOLDER &kp LSHIFT>
+            , <&macro_pause_for_release>
+            , <&macro_release &mo MACRO_PLACEHOLDER &kp LSHIFT>;
+    };
 };
         //Activates Layer 1
         //One shot sticky layer
@@ -82,9 +90,8 @@ combos {
     combo_layer1_shift {
         timeout-ms = <50>;
         key-positions = <16 4>;
-        bindings = <&layer1_shift_next 1>;
+        bindings = <&td_layer1_shift>;
     };
-};
     //Next  Key on Layer 0 is Shifted
     //Initiated on Layer 0
     combo_layer_0_shift_next {
