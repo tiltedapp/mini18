@@ -82,7 +82,7 @@
     combo_caps_layer {
         timeout-ms = <50>;
         key-positions = <12 17>;
-        bindings = <&sl_caps 1>;
+        bindings = <&sl_caps 4>;
         };
     //Next  Key on Layer 0 is Shifted
     //Initiated on Layer 0
