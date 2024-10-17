@@ -23,9 +23,8 @@
 layer1_shift_next: layer1_shift_next {
     compatible = "zmk,behavior-sticky-key";
     #binding-cells = <1>;
-    bindings = <&mo 1>;
-    release-after-ms = <0>;
-    quick-release;
+    bindings = <&mo>;
+    release-after-ms = <1000>;
     ignore-modifiers;
     sticky-key = <(LSHIFT)>;
 };
@@ -78,12 +77,14 @@ layer1_shift_next: layer1_shift_next {
 // ********************************* //
 // Function Combos                   //
 // ********************************* //
-    combo_layer1_shift_next {
+combos {
+    compatible = "zmk,combos";
+    combo_layer1_shift {
         timeout-ms = <50>;
         key-positions = <16 4>;
-        bindings = <&layer1_shift_next>;
-        layers = <0>;
+        bindings = <&layer1_shift_next 1>;
     };
+};
     //Next  Key on Layer 0 is Shifted
     //Initiated on Layer 0
     combo_layer_0_shift_next {
