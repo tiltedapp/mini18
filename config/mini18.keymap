@@ -19,16 +19,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 / {
-    macros {
-        layer1_shift: layer1_shift {
-            label = "LAYER1_SHIFT";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &to 1>
-                , <&macro_tap &sk LSHIFT>;
-        };
-    };
     behaviors {
         //Activates Layer 1
         //One shot sticky layer
@@ -86,14 +76,6 @@
         timeout-ms = <50>;
         key-positions = <13 1>;
         bindings = <&sk LSHFT>;
-        layers = <0>;
-    };
-    //Next Key on Layer 1 is Shifted
-    //Initiated on Layer 0
-    combo_layer_1_shift_next {
-        timeout-ms = <50>;
-        key-positions = <16 4>;
-        bindings = <&layer1_shift>;
         layers = <0>;
     };
    //Initiated on Layer 1
