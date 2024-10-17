@@ -19,7 +19,7 @@
             bindings = <&mo>;
             release-after-ms = <1000>;
             ignore-modifiers;
-        }
+        };
         //Activates Layer 1
         //One shot sticky layer
         //Any key pressed (except mod keys (cmd, shift etc.)) will trigger home layer switch
