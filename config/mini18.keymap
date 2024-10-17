@@ -28,7 +28,7 @@
                 = <&macro_tap &to 1>
                 , <&macro_tap &sk LSHIFT>;
         };
-    }
+    };
     behaviors {
         //Activates Layer 1
         //One shot sticky layer
