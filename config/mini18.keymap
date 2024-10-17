@@ -20,6 +20,25 @@
 #include <dt-bindings/zmk/bt.h>
 / {
     behaviors {
+    // New behavior: Shift next key on layer 1
+    shift_next_key_layer_1: sticky_key {
+        compatible = "zmk,behavior-sticky-key";
+        #binding-cells = <1>;
+        bindings = <&sk LSHFT>;
+        release-after-ms = <1000>;
+    };
+
+    // New behavior: Move to layer 1 and shift next key
+    move_to_layer_1_shift_next: sticky_layer {
+        compatible = "zmk,behavior-sticky-layer";
+        #binding-cells = <1>;
+        bindings = <&mo 1>;
+        release-after-ms = <1000>;
+        on-release {
+            // Activate shift next key behavior
+            activate-behavior = <&shift_next_key_layer_1>;
+        };
+    };
         //Activates Layer 1
         //One shot sticky layer
         //Any key pressed (except mod keys (cmd, shift etc.)) will trigger home layer switch
@@ -69,10 +88,11 @@
 // ********************************* //
 // Function Combos                   //
 // ********************************* //
-    combo_shift_next_layer_1 {
+    // New combo: 16 and 4 keys
+    combo_layer_1_shift_next {
         timeout-ms = <50>;
         key-positions = <16 4>;
-        bindings = <&mo 1>, <&sk LSHFT>;
+        bindings = <&move_to_layer_1_shift_next>;
         layers = <0>;
     };
     //Next  Key on Layer 0 is Shifted
