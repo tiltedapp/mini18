@@ -23,7 +23,7 @@ macros {
     ZMK_MACRO(layer1_shift,
         wait-ms = <0>;
         tap-ms = <0>;
-        bindings = <&sl_ignore_mods 1>, <&sk LSHIFT>;
+        bindings = <&macro_tap &sl_ignore_mods 1>, <&macro_tap &sk LSHIFT>;
     )
 };
     behaviors {
