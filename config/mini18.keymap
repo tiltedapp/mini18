@@ -20,6 +20,16 @@
 #include <dt-bindings/zmk/bt.h>
 / {
     behaviors {
+        //Activates Layer 4
+        //One shot sticky layer
+        //Any key pressed (except mod keys (cmd, shift etc.)) will trigger home layer switch
+        sl_caps: sl_caps {
+            compatible = "zmk,behavior-sticky-key";
+            #binding-cells = <1>;
+            bindings = <&mo>;
+            release-after-ms = <1000>;
+            ignore-modifiers;
+        };
         //Activates Layer 1
         //One shot sticky layer
         //Any key pressed (except mod keys (cmd, shift etc.)) will trigger home layer switch
@@ -69,7 +79,11 @@
 // ********************************* //
 // Function Combos                   //
 // ********************************* //
-
+    combo_caps_layer {
+        timeout-ms = <50>;
+        key-positions = <16 4>;
+        bindings = <&sl_caps 1>;
+        };
     //Next  Key on Layer 0 is Shifted
     //Initiated on Layer 0
     combo_layer_0_shift_next {
@@ -77,7 +91,7 @@
         key-positions = <13 1>;
         bindings = <&sk LSHFT>;
         layers = <0>;
-    };
+        };
    //Initiated on Layer 1
    //Output: Repeat Last Key
     combo_repeat_last_key {
