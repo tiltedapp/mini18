@@ -136,7 +136,7 @@
         key-positions = <9 10>;
         bindings = <&kp N9>;
         layers = <2>;
-        }
+        };
 
 // ********************************* //
 // Core Symbols                      //
