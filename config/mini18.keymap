@@ -442,7 +442,7 @@
             bindings = <
             &kp LS(V)  &kp LS(W)  &kp LS(M)                &kp LS(Y)  &kp LS(F)  &kp LS(Z)
             &kp LS(J)  &kp LS(P)  &kp LS(K)                &kp LS(B)  &kp LS(Q)  &kp LS(X)
-            &none  &none  &none                            &none   &none   &none
+            &none  &none  &none                            &none      &to 0      &none
             >;
         };
         bluetooth { // L5
