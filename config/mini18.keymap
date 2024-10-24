@@ -384,8 +384,8 @@
 // |   I + CMD   |  SPACE + MEH  |  Tab + Shift | //    // | BCK + CNTRL |       L1       |   C + CMD   | //
 // ---------------------------------------------- //    // ---------------------------------------------- //
             bindings = <
-&kp L        &kp G                    &kp D              &kp H                &kp U               &kp O
-&kp S        &lt 3 R                  &lt 2 T            &lt 2 N              &lt 3 E             &kp A
+&kp L        &kp G                    &kp D              &kp H                &kp U               &lt 4 O
+&kp S        &lt 3 R                  &lt 2 T            &lt 2 N              &kp E               &kp A
 &mt LCMD I   &mt LC(LS(LALT)) SPACE   &mt LSHIFT TAB     &mt RCTRL BACKSPACE  &sl_ignore_mods 1   &mt RCMD C
             >;
         };
@@ -426,9 +426,9 @@
 // |             |                |             | //    // |      Y      |        P       |      L      | //
 // ---------------------------------------------- //    // ---------------------------------------------- //
             bindings = <
-           &bt BT_CLR     &bt BT_NXT    &bt BT_PRV                         &kp C   &kp I   &kp W
-           &bt BT_SEL 0   &bt BT_SEL 1  &none                              &kp H   &kp J   &kp K
-           &none          &none         &none                              &kp Y   &kp P    &kp L
+           &none &none &none                                               &kp C   &kp I   &kp W
+           &none &none &none                                               &kp H   &kp J   &kp K
+           &none &none &none                                               &kp Y   &kp P    &kp L
             >;
         };
         alpha_capped { // L4
@@ -443,6 +443,20 @@
             &kp LS(V)  &kp LS(W)  &kp LS(M)                &kp LS(Y)  &kp LS(F)  &kp LS(Z)
             &kp LS(J)  &kp LS(P)  &kp LS(K)                &kp LS(B)  &kp LS(Q)  &kp LS(X)
             &none  &none  &none                            &none   &none   &none
+            >;
+        };
+        bluetooth { // L5
+// ---------------------------------------------- //    // ---------------------------------------------- //
+// |             |                |             | //    // |            |                |              | //
+// ---------------------------------------------- //    // ---------------------------------------------- //
+// |             |                |             | //    // |            |               |               | //
+// ---------------------------------------------- //    // ---------------------------------------------- //
+// |             |                |             | //    // |            |               |               | //
+// ---------------------------------------------- //    // ---------------------------------------------- //
+            bindings = <
+           &bt BT_CLR     &bt BT_NXT    &bt BT_PRV                         &none &none &none
+           &bt BT_SEL 0   &bt BT_SEL 1  &none                              &none &none &none
+           &none          &none         &none                              &none &none &none
             >;
         };
     };
