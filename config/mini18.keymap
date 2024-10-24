@@ -37,7 +37,7 @@
             compatible = "zmk,behavior-sticky-key";
             #binding-cells = <1>;
             bindings = <&mo>;
-            release-after-ms = <1000>;
+            release-after-ms = <5000>;
             ignore-modifiers;
         };
         //Does not deactivate layer
