@@ -400,7 +400,7 @@
             bindings = <
 &kp V                        &kp W  &kp M                  &kp Y   &kp F   &kp Z
 &kp J                        &kp P  &kp K                  &kp B   &kp Q   &kp X
-&lcmd_sticky_hold LCMD LCMD  &none  &none                  &rcntrl_sticky_hold RIGHT_CONTROL RIGHT_CONTROL  &none  &rcmd_sticky_hold RCMD RCMD
+&lcmd_sticky_hold LCMD LCMD  &none  &none                  &rcntrl_sticky_hold RIGHT_CONTROL RIGHT_CONTROL  &to 0  &rcmd_sticky_hold RCMD RCMD
             >;
         };
         nums { // L2
