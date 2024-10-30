@@ -332,7 +332,7 @@
    //Output: "+"
     combo_plus {
         timeout-ms = <50>;
-        key-positions = <7 4>;
+        key-positions = <6 4>;
         bindings = <&kp PLUS>;
         layers = <0>;
     };
