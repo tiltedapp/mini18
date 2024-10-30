@@ -342,7 +342,7 @@
         key-positions = <11 0>;
         bindings = <&kp ASTRK>;
         layers = <0>;
-    }
+    };
    //Output: "-"
     combo_minus {
         timeout-ms = <50>;
