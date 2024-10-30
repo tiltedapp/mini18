@@ -147,14 +147,14 @@
         key-positions = <3 4>;
         bindings = <&kp COLON>;
         layers = <0>;
-        };
+    };
    //Output: "$"
     combo_dollar {
         timeout-ms = <50>;
         key-positions = <4 11>;
         bindings = <&kp DLLR>;
         layers = <0>;
-    }
+    };
    //Output: "+"
     combo_plus {
         timeout-ms = <50>;
@@ -231,8 +231,7 @@
         key-positions = <3 5>;
         bindings = <&kp COMMA>;
         layers = <0>;
-        };
-
+    };
    //Output: ";"
     combo_semi_colon {
         timeout-ms = <50>;
@@ -254,7 +253,6 @@
         bindings = <&kp FSLH>;
         layers = <0>;
         };
-;
    //Output: " ' "
     combo_single_quote {
         timeout-ms = <50>;
