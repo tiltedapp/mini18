@@ -385,7 +385,7 @@
 // ---------------------------------------------- //    // ---------------------------------------------- //
             bindings = <
 &kp L        &kp G                    &kp D              &kp H                &kp U               &lt 5 O
-&kp S        &lt R                    &lt T              &lt N                &kp E               &kp A
+&kp S        &lt 3 R                  &lt 2 T            &lt 2 N              &kp E               &kp A
 &mt LCMD I   &mt LC(LS(LALT)) SPACE   &mt LSHIFT TAB     &mt RCTRL BACKSPACE  &sl_ignore_mods 1   &mt RCMD C
             >;
         };
