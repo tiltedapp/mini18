@@ -244,7 +244,7 @@
     combo_percent {
         timeout-ms = <50>;
         key-positions = <4 9>;
-        bindings = <&kp PRCNT>;
+        bindings = <&kp PERCENT>;
         layers = <0>;
     };
    //Output: " ' "
@@ -333,7 +333,7 @@
     combo_plus {
         timeout-ms = <50>;
         key-positions = <7 4>;
-        bindings = <&kp PLUS>;
+        bindings = <&kp KP_PLUS>;
         layers = <0>;
     };
    //Output: "*"
@@ -342,7 +342,7 @@
         key-positions = <11 0>;
         bindings = <&kp ASTRK>;
         layers = <0>;
-    };
+    }
    //Output: "-"
     combo_minus {
         timeout-ms = <50>;
@@ -384,7 +384,7 @@
 // |   I + CMD   |  SPACE + MEH  |  Tab + Shift | //    // | BCK + CNTRL |       L1       |   C + CMD   | //
 // ---------------------------------------------- //    // ---------------------------------------------- //
             bindings = <
-&kp L        &kp G                    &kp D              &kp H                &kp U               &lt 4 O
+&kp L        &kp G                    &kp D              &kp H                &kp U               &lt 5 O
 &kp S        &lt 3 R                  &lt 2 T            &lt 2 N              &kp E               &kp A
 &mt LCMD I   &mt LC(LS(LALT)) SPACE   &mt LSHIFT TAB     &mt RCTRL BACKSPACE  &sl_ignore_mods 1   &mt RCMD C
             >;
@@ -426,9 +426,9 @@
 // |             |                |             | //    // |      Y      |        P       |      L      | //
 // ---------------------------------------------- //    // ---------------------------------------------- //
             bindings = <
-           &none &none &none                                               &kp C   &kp I   &kp W
+           &none &none &none                                               &none   &none   &none
            &none &none &none                                               &kp H   &kp J   &kp K
-           &none &none &none                                               &kp Y   &kp P    &kp L
+           &none &none &none                                               &none   &none    &kp L
             >;
         };
         alpha_capped { // L4
@@ -454,7 +454,7 @@
 // |             |                |             | //    // |            |               |               | //
 // ---------------------------------------------- //    // ---------------------------------------------- //
             bindings = <
-           &bt BT_CLR     &bt BT_NXT    &bt BT_PRV                         &none &none &none
+           &bt BT_CLR     &none         &none                              &none &none &none
            &bt BT_SEL 0   &bt BT_SEL 1  &none                              &none &none &none
            &none          &none         &none                              &none &none &none
             >;
