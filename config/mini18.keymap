@@ -333,8 +333,8 @@
     combo_plus {
         timeout-ms = <50>;
         key-positions = <7 4>;
-        bindings = <&kp KP_PLUS>;
-        layers = <0>;
+        bindings = <&kp PLUS>;
+        layers = <0 3>;
     };
    //Output: "*"
     combo_asterisk {
