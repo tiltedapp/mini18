@@ -382,7 +382,7 @@
 // |   I + CMD   |  SPACE + MEH  |  Tab + Shift | //    // | CNTRL + BCK |       L1       |   C + CMD   | //
 // ---------------------------------------------- //    // ---------------------------------------------- //
             bindings = <
-&mt RCMD L   &mt SHIFT G              &mt RCTRL D        &mt RCTRL H          &mt SHIFT U         &mt RCMD O
+&kp L        &kp G                    &kp D              &kp H                &kp U               &kp O
 &lt 5 S      &lt 4 R                  &lt 3 T            &lt 3 N              &lt 4 E             &lt 5 A
 &mt LCMD I   &mt LC(LS(LALT)) SPACE   &mt LSHIFT TAB     &mt RCTRL BACKSPACE  &sl_ignore_mods 1   &mt RCMD C
             >;
