@@ -82,7 +82,7 @@
     combo_caps_layer {
         timeout-ms = <50>;
         key-positions = <16 4>;
-        bindings = <&sl_caps 4>;
+        bindings = <&sl_caps 2>;
         };
     //Next  Key on Layer 0 is Shifted
     //Initiated on Layer 0
@@ -121,21 +121,21 @@
         timeout-ms = <50>;
         key-positions = <3 4>;
         bindings = <&kp N7>;
-        layers = <2>;
+        layers = <3>;
         };
    //Output: "8"
     combo_num_eight {
         timeout-ms = <50>;
         key-positions = <4 5>;
         bindings = <&kp N8>;
-        layers = <2>;
+        layers = <3>;
         };
    //Output: "9"
     combo_num_nine {
         timeout-ms = <50>;
         key-positions = <9 10>;
         bindings = <&kp N9>;
-        layers = <2>;
+        layers = <3>;
         };
 // ********************************* //
 // Core Symbols                      //
