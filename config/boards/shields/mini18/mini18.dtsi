@@ -4,30 +4,24 @@
     default_layout: default_layout {
         compatible = "zmk,physical-layout";
         display-name = "Default Layout";
-        transform = <&default_transform>;
-        kscan = <&kscan0>;
+        transform = &default_transform;
     };
 
     chosen {
-        zmk,kscan = &kscan0;
-        zmk,physical-layout = &default_layout;
+        zmk,matrix-transform = &default_transform;
     };
 
-    kscan0: kscan0 {
-        compatible = "zmk,kscan-gpio-matrix";
-        diode-direction = "col2row";
-        wakeup-source;
-        row-gpios
-            = <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            , <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-            ;
+    // Direct pin configurations for left and right halves
+    direct_pins_left: direct_pins_left {
+        compatible = "zmk,matrix-direct";
+        rows = <3>;
+        cols = <3>;
+    };
 
-        col-gpios
-            = <&pro_micro 14 GPIO_ACTIVE_HIGH>
-            , <&pro_micro 16 GPIO_ACTIVE_HIGH>
-            , <&pro_micro 10 GPIO_ACTIVE_HIGH>
-            ;
+    direct_pins_right: direct_pins_right {
+        compatible = "zmk,matrix-direct";
+        rows = <3>;
+        cols = <3>;
     };
 
     default_transform: keymap_transform0 {
@@ -42,5 +36,91 @@
         //  LKey 7 |LKey 8 |LKey 9      RKey 7 |RKey 8 |RKey 9
             RC(2,0) RC(2,1) RC(2,2)     RC(2,3) RC(2,4) RC(2,5)
         >;
+    };
+};
+
+&pinctrl {
+    // Left Half Pin Configurations
+    gpio0_17_input: gpio0_17_input {
+        pinmux = <NRF_PINMUX(0, 17)>;
+        input-enable;
+        pull-up;
+    };
+    gpio0_20_input: gpio0_20_input {
+        pinmux = <NRF_PINMUX(0, 20)>;
+        input-enable;
+        pull-up;
+    };
+    gpio0_22_input: gpio0_22_input {
+        pinmux = <NRF_PINMUX(0, 22)>;
+        input-enable;
+        pull-up;
+    };
+    gpio0_24_input: gpio0_24_input {
+        pinmux = <NRF_PINMUX(0, 24)>;
+        input-enable;
+        pull-up;
+    };
+    gpio1_00_input: gpio1_00_input {
+        pinmux = <NRF_PINMUX(1, 0)>;
+        input-enable;
+        pull-up;
+    };
+    gpio0_11_input: gpio0_11_input {
+        pinmux = <NRF_PINMUX(0, 11)>;
+        input-enable;
+        pull-up;
+    };
+    gpio0_04_input: gpio0_04_input {
+        pinmux = <NRF_PINMUX(0, 4)>;
+        input-enable;
+        pull-up;
+    };
+    gpio1_04_input: gpio1_04_input {
+        pinmux = <NRF_PINMUX(1, 4)>;
+        input-enable;
+        pull-up;
+    };
+
+    // Right Half Pin Configurations
+    gpio0_31_input: gpio0_31_input {
+        pinmux = <NRF_PINMUX(0, 31)>;
+        input-enable;
+        pull-up;
+    };
+    gpio0_29_input: gpio0_29_input {
+        pinmux = <NRF_PINMUX(0, 29)>;
+        input-enable;
+        pull-up;
+    };
+    gpio0_02_input: gpio0_02_input {
+        pinmux = <NRF_PINMUX(0, 2)>;
+        input-enable;
+        pull-up;
+    };
+    gpio0_15_input: gpio0_15_input {
+        pinmux = <NRF_PINMUX(0, 15)>;
+        input-enable;
+        pull-up;
+    };
+    gpio1_13_input: gpio1_13_input {
+        pinmux = <NRF_PINMUX(1, 13)>;
+        input-enable;
+        pull-up;
+    };
+    gpio1_11_input: gpio1_11_input {
+        pinmux = <NRF_PINMUX(1, 11)>;
+        input-enable;
+        pull-up;
+    };
+    gpio0_10_input: gpio0_10_input {
+        pinmux = <NRF_PINMUX(0, 10)>;
+        input-enable;
+        pull-up;
+    };
+    gpio0_09_input: gpio0_09_input {
+        pinmux = <NRF_PINMUX(0, 9)>;
+        input-enable;
+        pull-up;
     };
 };
