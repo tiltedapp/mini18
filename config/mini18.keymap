@@ -2,22 +2,19 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
 / {
     keymap {
         compatible = "zmk,keymap";
-
         default_layer {
             bindings = <
-                // Left Half
-                &kp Q    &kp W    &kp E
-                &kp A    &kp S    &kp D
-                &kp Z             &kp X
-
-                // Right Half
-                &kp O    &kp P    &kp LBKT
-                &kp K    &kp L    &kp SEMI
-                &kp APOS           &kp BSLH
+                &kp Q &kp W &kp E                     &kp R &kp T &kp Y
+                &kp A &kp S &kp D                     &kp F &kp G &kp H
+                &kp Z &kp X                           &kp C &kp V
             >;
         };
     };
-};
+};;
