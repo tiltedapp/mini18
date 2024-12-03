@@ -4,7 +4,7 @@
     default_layout: default_layout {
         compatible = "zmk,physical-layout";
         display-name = "Split 8-Key Direct Wire";
-        transform = &default_transform;
+        transform = < &default_transform >;
     };
 
     chosen {
