@@ -20,7 +20,6 @@
         wakeup-source;
 
         input-gpios
-        //Left Half Start
             = <&pro_micro 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
             , <&pro_micro 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
             , <&pro_micro 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
@@ -29,7 +28,6 @@
             , <&pro_micro 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
             , <&pro_micro 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
             , <&pro_micro 9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-        //Right Half Start
             , <&pro_micro 19 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
             , <&pro_micro 20 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
             , <&pro_micro 21 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>

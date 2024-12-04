@@ -7,15 +7,9 @@
         compatible = "zmk,keymap";
         default_layer {
             bindings = <
-                // Left
-                &kp Q &kp W &kp E
-                &kp A &kp S &kp D
-                &kp Z &kp X
-
-                // Right
-                &kp R &kp T &kp Y
-                &kp F &kp G &kp H
-                &kp C &kp V
+                &kp Q &kp W &kp E          &kp R &kp T &kp Y
+                &kp A &kp S &kp D          &kp F &kp G &kp H
+                &kp Z       &kp X          &kp C       &kp V
             >;
         };
     };
