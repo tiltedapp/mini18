@@ -1,8 +1,12 @@
 include:
   - board: nice_nano_v2
     shield: mini18_left
+    snippet: zmk-usb-logging
+    cmake-args: -DCONFIG_LOG_PROCESS_THREAD_STARTUP_DELAY_MS=8000
   - board: nice_nano_v2
     shield: mini18_right
+    snippet: zmk-usb-logging
+    cmake-args: -DCONFIG_LOG_PROCESS_THREAD_STARTUP_DELAY_MS=8000
   - board: nice_nano_v2
     shield: settings_reset
     snippet: zmk-usb-logging
