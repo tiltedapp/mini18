@@ -1,9 +1,1 @@
 #include "mini18.dtsi"
-
-&default_transform {
-    col-offset = <8>;
-};
-
-&chosen {
-    zmk,split-role = "peripheral";
-};

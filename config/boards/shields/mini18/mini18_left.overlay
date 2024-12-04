@@ -1,5 +1,1 @@
 #include "mini18.dtsi"
-
-&chosen {
-    zmk,split-role = "central";
-};
