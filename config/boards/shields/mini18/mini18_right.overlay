@@ -4,6 +4,6 @@
     col-offset = <8>;
 };
 
-&kscan0 {
+&chosen {
     zmk,split-role = "peripheral";
 };
