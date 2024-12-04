@@ -1,15 +1,502 @@
+// ------------------------------------------------------------------------------------------------------ //
+//  ####################################################################################################  //
+//  ############################################# BRIEF ################################################  //
+//  ####################################################################################################  //
+// ------------------------------------------------------------------------------------------------------ //
+// NOCC Mini 16 Prototype 2.0 (Pronounced "knock")
+//  _   _   ____    _____   _____
+// | \ | | / __ \  / ____| / ____|
+// |  \| || |  | || |     | |
+// | . ` || |  | || |     | |
+// | |\  || |__| || |____ | |____
+// |_| \_| \____/  \_____| \_____|
+//
+// The NOCC Mini 16 is focused on being portable (small & lightweight), ergonomic,
+// yet, still fast to type and program with (symbols, VIM Motions, TMUX etc.) by
+// making use of combos and behaviors. The Keymap is Mac focused but can be
+// modified for Windows.
+// ------------------------------------------------------------------------------------------------------ //
+//  ####################################################################################################  //
+//  ###################################### KEYMAP PIN ASSIGNMENT #######################################  //
+//  ####################################################################################################  //
+// ------------------------------------------------------------------------------------------------------ //
+// Each Key is assigned a pin on the MCU. Use this map to create new combos, or edit existing ones.
+// ** Example: 10 is the right hand thumb key and 16 is the right hand pinky key **
+//
+// 16 Key Keymap Pin Layout
+//  2  3  4     19  20  21
+//  5  6  7     14  15  18
+//  8     9     10      16
+// ------------------------------------------------------------------------------------------------------ //
+//  ####################################################################################################  //
+//  ############################################# INCLUDES #############################################  //
+//  ####################################################################################################  //
+// ------------------------------------------------------------------------------------------------------ //
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-
 / {
+// ------------------------------------------------------------------------------------------------------ //
+//  ####################################################################################################  //
+//  ############################################ BEHAVIORS #############################################  //
+//  ####################################################################################################  //
+// ------------------------------------------------------------------------------------------------------ //
+    behaviors {
+        //Activates Layer 4
+        //One shot sticky layer
+        //Any key pressed (except mod keys (cmd, shift etc.)) will trigger home layer switch
+        sl_caps: sl_caps {
+            compatible = "zmk,behavior-sticky-key";
+            #binding-cells = <1>;
+            bindings = <&mo>;
+            release-after-ms = <200>;
+            ignore-modifiers;
+        };
+        //Activates Layer 1
+        //One shot sticky layer
+        //Any key pressed (except mod keys (cmd, shift etc.)) will trigger home layer switch
+        sl_ignore_mods: sticky_layer_ignore_mods {
+            compatible = "zmk,behavior-sticky-key";
+            #binding-cells = <1>;
+            bindings = <&mo>;
+            release-after-ms = <200>;
+            ignore-modifiers;
+        };
+        //Does not deactivate layer
+        //When tapped, next key is Left Command + Key
+        //If held Left Command Key
+         lcmd_sticky_hold: lcmd_sticky_hold {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&sk>;
+        };
+        //Does not deactivate layer
+        //When tapped, next key is Right Command + Key
+        //If held Right Command Key
+         rcmd_sticky_hold: rcmd_sticky_hold {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&sk>;
+        };
+        //Does not deactivate layer
+        //When tapped, next key is Right Control + Key
+        //If held Right Control Key
+         rcntrl_sticky_hold: rcntrl_sticky_hold {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&sk>;
+        };
+    };
+// ------------------------------------------------------------------------------------------------------ //
+//  ####################################################################################################  //
+//  ############################################## COMBOS ##############################################  //
+//  ####################################################################################################  //
+// ------------------------------------------------------------------------------------------------------ //
+    combos {
+        compatible = "zmk,combos";
+// ------------------------------------------------------------------------------------------------------ //
+//  ######################################### FUNCTION COMBOS ##########################################  //
+// ------------------------------------------------------------------------------------------------------ //
+    combo_caps_layer {
+        timeout-ms = <50>;
+        key-positions = <16 4>;
+        bindings = <&sl_caps 4>;
+        };
+    //Next  Key on Layer 0 is Shifted
+    //Initiated on Layer 0
+    combo_layer_0_shift_next {
+        timeout-ms = <50>;
+        key-positions = <13 1>;
+        bindings = <&sk LSHFT>;
+        layers = <0>;
+        };
+   //Initiated on Layer 1
+   //Output: Repeat Last Key
+    combo_repeat_last_key {
+        timeout-ms = <50>;
+        key-positions = <16 17>;
+        bindings = <&key_repeat>;
+        };
+   //Output: Enter
+    combo_enter {
+        timeout-ms = <50>;
+        key-positions = <13 16>;
+        bindings = <&kp ENTER>;
+        layers = <0>;
+        };
+   //Output: Escape
+    combo_esc {
+        timeout-ms = <50>;
+        key-positions = <4 5>;
+        bindings = <&kp ESCAPE>;
+        layers = <0>;
+        };
+// ------------------------------------------------------------------------------------------------------ //
+//  ########################################### NUMBER COMBOS ##########################################  //
+// ------------------------------------------------------------------------------------------------------ //
+   //Output: "7"
+    combo_num_seven {
+        timeout-ms = <50>;
+        key-positions = <3 4>;
+        bindings = <&kp N7>;
+        layers = <2>;
+        };
+   //Output: "8"
+    combo_num_eight {
+        timeout-ms = <50>;
+        key-positions = <4 5>;
+        bindings = <&kp N8>;
+        layers = <2>;
+        };
+   //Output: "9"
+    combo_num_nine {
+        timeout-ms = <50>;
+        key-positions = <9 10>;
+        bindings = <&kp N9>;
+        layers = <2>;
+        };
+// ------------------------------------------------------------------------------------------------------ //
+//  ########################################## SYMBOL COMBOS ###########################################  //
+// ------------------------------------------------------------------------------------------------------ //
+   //Output: ":"
+    combo_colon {
+        timeout-ms = <50>;
+        key-positions = <3 4>;
+        bindings = <&kp COLON>;
+        layers = <0>;
+    };
+   //Output: "$"
+    combo_dollar {
+        timeout-ms = <50>;
+        key-positions = <4 11>;
+        bindings = <&kp DLLR>;
+        layers = <0>;
+    };
+   //Output: "+"
+    combo_plus {
+        timeout-ms = <50>;
+        key-positions = <7 4>;
+        bindings = <&kp PLUS>;
+        layers = <0>;
+    };
+   //Output: "%"
+    combo_percent {
+        timeout-ms = <50>;
+        key-positions = <9 4>;
+        bindings = <&kp PERCENT>;
+        layers = <0>;
+    };
+   //Output: "("
+    combo_left_parenthesis {
+        timeout-ms = <50>;
+        key-positions = <8 9>;
+        bindings = <&kp LPAR>;
+        layers = <0>;
+    };
+   //Output: ")"
+    combo_right_parenthesis {
+        timeout-ms = <50>;
+        key-positions = <2 3>;
+        bindings = <&kp RPAR>;
+        layers = <0>;
+    };
+   //Output: "{"
+    combo_left_brace {
+        timeout-ms = <50>;
+        key-positions = <7 10>;
+        bindings = <&kp LBRC>;
+        layers = <0>;
+    };
+   //Output: "}"
+    combo_right_brace {
+        timeout-ms = <50>;
+        key-positions = <1 4>;
+        bindings = <&kp RBRC>;
+        layers = <0>;
+    };
+   //Output: "["
+    combo_left_bracket {
+        timeout-ms = <50>;
+        key-positions = <6 11>;
+        bindings = <&kp LBKT>;
+        layers = <0>;
+    };
+   //Output: "]"
+    combo_right_bracket {
+        timeout-ms = <50>;
+        key-positions = <0 5>;
+        bindings = <&kp RBKT>;
+        layers = <0>;
+    };
+   //Output: "<"
+    combo_less_than {
+        timeout-ms = <50>;
+        key-positions = <12 6>;
+        bindings = <&kp LT>;
+        layers = <0>;
+    };
+   //Output: ">"
+    combo_greater_than {
+        timeout-ms = <50>;
+        key-positions = <11 17>;
+        bindings = <&kp GT>;
+        layers = <0>;
+    };
+   //Output: ","
+    combo_comma {
+        timeout-ms = <50>;
+        key-positions = <3 5>;
+        bindings = <&kp COMMA>;
+        layers = <0>;
+    };
+   //Output: ";"
+    combo_semi_colon {
+        timeout-ms = <50>;
+        key-positions = <9 10>;
+        bindings = <&kp SEMICOLON>;
+        layers = <0>;
+        };
+   //Output: "."
+    combo_period {
+        timeout-ms = <50>;
+        key-positions = <10 11>;
+        bindings = <&kp DOT>;
+        layers = <0>;
+        };
+   //Output: "/"
+    combo_slash {
+        timeout-ms = <50>;
+        key-positions = <9 11>;
+        bindings = <&kp FSLH>;
+        layers = <0>;
+        };
+   //Output: " ' "
+    combo_single_quote {
+        timeout-ms = <50>;
+        key-positions = <1 2>;
+        bindings = <&kp APOS>;
+        layers = <0>;
+    };
+   //Output: ' " '
+    combo_double_quotes {
+        timeout-ms = <50>;
+        key-positions = <0 1>;
+        bindings = <&kp DQT>;
+        layers = <0>;
+    };
+   //Output: " ` "
+    combo_grave {
+        timeout-ms = <50>;
+        key-positions = <0 2>;
+        bindings = <&kp GRAVE>;
+        layers = <0>;
+    };
+   //Output: "?"
+    combo_question {
+        timeout-ms = <50>;
+        key-positions = <6 8>;
+        bindings = <&kp QMARK>;
+        layers = <0>;
+    };
+   //Output: "!"
+    combo_exclamation {
+        timeout-ms = <50>;
+        key-positions = <6 7>;
+        bindings = <&kp EXCL>;
+        layers = <0>;
+    };
+   //Output: "#"
+    combo_hash {
+        timeout-ms = <50>;
+        key-positions = <7 8>;
+        bindings = <&kp HASH>;
+        layers = <0>;
+    };
+   //Output: "|"
+    combo_pipe {
+        timeout-ms = <50>;
+        key-positions = <1 6>;
+        bindings = <&kp PIPE>;
+        layers = <0>;
+    };
+   //Output: "&"
+    combo_ampersand {
+        timeout-ms = <50>;
+        key-positions = <1 8>;
+        bindings = <&kp AMPS>;
+        layers = <0>;
+    };
+
+   //Output: "~"
+    combo_tilde {
+        timeout-ms = <50>;
+        key-positions = <2 9>;
+        bindings = <&kp TILDE>;
+        layers = <0>;
+    };
+   //Output: "_"
+    combo_underscore {
+        timeout-ms = <50>;
+        key-positions = <3 8>;
+        bindings = <&kp UNDER>;
+        layers = <0>;
+    };
+   //Output: "="
+    combo_equal {
+        timeout-ms = <50>;
+        key-positions = <1 10>;
+        bindings = <&kp EQUAL>;
+        layers = <0>;
+    };
+
+   //Output: "*"
+    combo_asterisk {
+        timeout-ms = <50>;
+        key-positions = <11 0>;
+        bindings = <&kp ASTRK>;
+        layers = <0>;
+    };
+   //Output: "-"
+    combo_minus {
+        timeout-ms = <50>;
+        key-positions = <6 5>;
+        bindings = <&kp MINUS>;
+        layers = <0>;
+    };
+   //Output: "@"
+    combo_at {
+        timeout-ms = <50>;
+        key-positions = <9 5>;
+        bindings = <&kp AT>;
+        layers = <0>;
+    };
+   //Output: "\"
+    combo_backslash {
+        timeout-ms = <50>;
+        key-positions = <3 11>;
+        bindings = <&kp BSLH>;
+        layers = <0>;
+    };
+   //Output: "^"
+    combo_caret {
+        timeout-ms = <50>;
+        key-positions = <6 2>;
+        bindings = <&kp CARET>;
+        layers = <0>;
+    };
+};
+// ------------------------------------------------------------------------------------------------------ //
+//  ####################################################################################################  //
+//  ############################################# KEYMAP ###############################################  //
+//  ####################################################################################################  //
+// ------------------------------------------------------------------------------------------------------ //
     keymap {
         compatible = "zmk,keymap";
-        default_layer {
+// ------------------------------------------------------------------------------------------------------ //
+//  ##################################### ALPHA #1 & SYMBOLS (combos) ##################################  //
+// ------------------------------------------------------------------------------------------------------ //
+// |   l + CTRL  |    g + OPTN   |    d + CMD   | //    // |   h + CTRL  |    u + OPTN    |   o + CMD   | //
+// ---------------------------------------------- //    // ---------------------------------------------- //
+// |    s + L5   |     r + L4    |    t + L3    | //    // |   n + L3    |     e + L4     |    a + L5   | //
+// ---------------------------------------------- //    // ---------------------------------------------- //
+// |  i + SHIFT  |               |  SPACE + MEH | //    // |     L1      |                |  c + SHIFT  | //
+// ------------ //               // ------------- //    // ------------ //                // ------------ //
+        layer_0 {
             bindings = <
-                &kp Q &kp W &kp E          &kp R &kp T &kp Y
-                &kp A &kp S &kp D          &kp F &kp G &kp H
-                &kp Z       &kp X          &kp C       &kp V
+
+           &kp L      &kp G      &kp D                              &kp H      &kp U      &kp O
+           &lt 5 S    &lt 4 R    &lt 3 T                            &lt 3 N    &lt 4 E    &lt 5 A
+           &mt LEFT_SHIFT I      &mt LC(LS(LALT)) SPACE             &sl_ignore_mods 1     &mt RIGHT_SHIFT C
+
+            >;
+        };
+// ------------------------------------------------------------------------------------------------------ //
+//  ############################################# ALPHA #2 #############################################  //
+// ------------------------------------------------------------------------------------------------------ //
+// |      v      |       w       |      m       | //    // |      y      |        f       |      z      | //
+// ---------------------------------------------- //    // ---------------------------------------------- //
+// |      j      |       p       |      k       | //    // |      b      |        q       |      x      | //
+// ---------------------------------------------- //    // ---------------------------------------------- //
+// |  CAPS LOCK  |               |    COMMAND   | //    // |    NONE     |                |   CAPS 1X   | //
+// ------------ //               // ------------- //    // ------------ //                // ------------ //
+        layer_1 {
+            bindings = <
+                &kp V &kp W &kp M                    &kp Y &kp F &kp Z
+                &kp J &kp P &kp K                    &kp B &kp Q &kp X
+                &none       &none                    &none       &none
+            >;
+        };
+// ------------------------------------------------------------------------------------------------------ //
+//  ########################################### ALPHA #2 CAPS ##########################################  //
+// ------------------------------------------------------------------------------------------------------ //
+// |      V      |       W       |      M       | //    // |      Y      |        F       |      Z      | //
+// ---------------------------------------------- //    // ---------------------------------------------- //
+// |      J      |       P       |      K       | //    // |      B      |        Q       |      X      | //
+// ---------------------------------------------- //    // ---------------------------------------------- //
+// |    NONE     |               |     NONE     | //    // |    NONE     |                |     NONE    | //
+// ------------ //               // ------------- //    // ------------ //                // ------------ //
+        layer_2 {
+            bindings = <
+                &kp V &kp W &kp M                    &kp Y &kp F &kp Z
+                &kp J &kp P &kp K                    &kp B &kp Q &kp X
+                &none       &none                    &none       &none
+            >;
+        };
+// ------------------------------------------------------------------------------------------------------ //
+//  ############################################ NUMS / ARROWS #########################################  //
+// ------------------------------------------------------------------------------------------------------ //
+// |             |       UP       |             | //    // |      4   (7)|(7)     5    (8)|(8)   6      | //
+// ---------------------------------------------- //    // ---------------------------------------------- //
+// |     LEFT    |      DOWN      |    RIGHT    | //    // |      1   (9)|(9)     2       |      3      | //
+// ---------------------------------------------- //    // ---------------------------------------------- //
+// |             |                |             | //    // |             |                |      0      | //
+// ------------ //               // ------------- //    // ------------ //                // ------------ //
+        layer_3 {
+            bindings = <
+                &kp V &kp W &kp M                    &kp Y &kp F &kp Z
+                &kp J &kp P &kp K                    &kp B &kp Q &kp X
+                &none       &none                    &none       &none
+            >;
+        };
+// ------------------------------------------------------------------------------------------------------ //
+//  ################################################ VIM ###############################################  //
+// ------------------------------------------------------------------------------------------------------ //
+// |             |                |             | //    // |             |                |             | //
+// ---------------------------------------------- //    // ---------------------------------------------- //
+// |             |                |             | //    // |      H      |        J       |      K      | //
+// ---------------------------------------------- //    // ---------------------------------------------- //
+// |             |                |             | //    // |             |                |      L      | //
+// ------------ //               // ------------- //    // ------------ //                // ------------ //
+        layer_4 {
+            bindings = <
+           &none &none &none                                               &none   &none   &none
+           &none &none &none                                               &kp H   &kp J   &kp K
+           &none       &none                                               &none           &kp L
+            >;
+        };
+// ------------------------------------------------------------------------------------------------------ //
+//  ############################################# BLUETOOTH ############################################  //
+// ------------------------------------------------------------------------------------------------------ //
+// |             |                |             | //    // |            |                |              | //
+// ---------------------------------------------- //    // ---------------------------------------------- //
+// |             |                |             | //    // |            |               |               | //
+// ---------------------------------------------- //    // ---------------------------------------------- //
+// |             |                |             | //    // |            |               |               | //
+// ------------ //               // ------------- //    // ------------ //                // ------------ //
+        layer_5 {
+            bindings = <
+           &bt BT_CLR     &none         &none                              &none &none &none
+           &bt BT_SEL 0   &bt BT_SEL 1  &none                              &none &none &none
+           &none                        &none                              &none       &none
             >;
         };
     };
