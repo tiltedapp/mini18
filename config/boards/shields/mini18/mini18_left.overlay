@@ -1,1 +1,5 @@
 #include "mini18.dtsi"
+
+&kscan0 {
+    zmk,split-role = "central";
+};

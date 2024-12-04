@@ -1,5 +1,9 @@
 #include "mini18.dtsi"
 
 &default_transform {
-	col-offset = <8>;
+    col-offset = <8>;
+};
+
+&kscan0 {
+    zmk,split-role = "peripheral";
 };
