@@ -8,7 +8,7 @@
         compatible = "zmk,matrix-transform";
         columns = <16>;
         rows = <1>;
-        map = <
+        map =
             RC(0,0) RC(0,1) RC(0,2)     // Left top
             RC(0,3) RC(0,4) RC(0,5)     // Left middle
             RC(0,6) RC(0,7)             // Left bottom
@@ -22,17 +22,8 @@
         label = "KSCAN";
         wakeup-source;
         input-gpios
-        //Left Half Start (using original right half pins)
-            = <&pro_micro 19 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&pro_micro 20 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&pro_micro 21 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&pro_micro 14 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&pro_micro 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&pro_micro 18 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&pro_micro 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-            , <&pro_micro 16 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
-        //Right Half Start (using original left half pins)
-            , <&pro_micro 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+        //Left Half Start
+            = <&pro_micro 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
             , <&pro_micro 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
             , <&pro_micro 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
             , <&pro_micro 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
@@ -40,6 +31,15 @@
             , <&pro_micro 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
             , <&pro_micro 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
             , <&pro_micro 9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+        //Right Half Start
+            , <&pro_micro 19 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&pro_micro 20 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&pro_micro 21 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&pro_micro 14 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&pro_micro 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&pro_micro 18 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&pro_micro 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            , <&pro_micro 16 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
             ;
     };
 };
