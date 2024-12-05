@@ -76,7 +76,7 @@
         combo_test_2 {
         timeout-ms = <100>;
         key-positions = <11 12>;  // n and e keys
-        bindings = <&kp Z>;
+        bindings = <&kp EXCLAMATION>;
         layers = <0>;
     };
 // ------------------------------------------------------------------------------------------------------ //
