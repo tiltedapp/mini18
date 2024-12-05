@@ -88,14 +88,14 @@
     //Initiated on Layer 0
     combo_caps_layer {
         timeout-ms = <50>;
-        key-positions = <15 4>;
+        key-positions = <14 4>;
         bindings = <&sl_caps 2>;
         };
     //Next  Key on Layer 0 is Shifted
     //Initiated on Layer 0
     combo_layer_0_shift_next {
         timeout-ms = <50>;
-        key-positions = <14 1>;
+        key-positions = <13 1>;
         bindings = <&sk LSHFT>;
         layers = <0>;
         };
@@ -103,7 +103,7 @@
    //Output: Repeat Last Key
     combo_repeat_last_key {
         timeout-ms = <50>;
-        key-positions = <10 16>;
+        key-positions = <14 15>;
         bindings = <&key_repeat>;
         layers = <0>;
         };
@@ -111,7 +111,7 @@
    //Output: Enter
     combo_enter {
         timeout-ms = <50>;
-        key-positions = <9 10>;
+        key-positions = <13 14>;
         bindings = <&kp ENTER>;
         layers = <0>;
         };
@@ -119,7 +119,7 @@
     //Output: Backspace
     combo_backspace {
         timeout-ms = <50>;
-        key-positions = <14 15>;
+        key-positions = <9 10>;
         bindings = <&kp BACKSPACE>;
         layers = <0>;
         };
@@ -127,7 +127,7 @@
    //Output: Escape
     combo_esc {
         timeout-ms = <50>;
-        key-positions = <3 4>;
+        key-positions = <1 2>;
         bindings = <&kp ESCAPE>;
         layers = <0>;
         };
@@ -135,7 +135,7 @@
     //Output: Tab
     combo_tab {
         timeout-ms = <50>;
-        key-positions = <6 7>;
+        key-positions = <7 8>;
         bindings = <&kp TAB>;
         layers = <0>;
         };
@@ -178,7 +178,7 @@
 // ------------------------------------------------------------------------------------------------------ //
 //  ##################################### ALPHA #1 & SYMBOLS (combos) ##################################  //
 // ------------------------------------------------------------------------------------------------------ //
-// |   l + CTRL  |    g + OPTN   |    d + CMD   | //    // |   h + CTRL  |    u + OPTN    |   o + CMD   | //
+// |   l + CTRL  |    g + OPTN   |    d + CMD   | //    // |   h + CMD   |    u + OPTN    |  o + CTRL   | //
 // ---------------------------------------------- //    // ---------------------------------------------- //
 // |    s + L5   |     r + L4    |    t + L3    | //    // |   n + L3    |     e + L4     |    a + L5   | //
 // ---------------------------------------------- //    // ---------------------------------------------- //
@@ -187,9 +187,9 @@
         layer_0 {
             bindings = <
 
-           &kp L      &kp G      &kp D                              &kp H      &kp U      &kp O
-           &lt 5 S    &lt 4 R    &lt 3 T                            &lt 3 N    &lt 4 E    &lt 5 A
-           &mt LEFT_SHIFT I      &mt LC(LS(LALT)) SPACE             &sl_ignore_mods 1     &mt RIGHT_SHIFT C
+&mt LEFT_CONTROL L &mt  LALT G &mt LEFT_COMMAND D        &mt RIGHT_COMMAND H &mt RALT U &mt RIGHT_CONTROL O
+&lt 5 S            &lt 4 R     &lt 3 T                   &lt 3 N             &lt 4 E    &lt 5 A
+&mt LEFT_SHIFT I               &mt LC(LS(LALT)) SPACE    &sl_ignore_mods 1              &mt RIGHT_SHIFT C
 
             >;
         };
