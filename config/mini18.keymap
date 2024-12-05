@@ -410,9 +410,9 @@
         layer_0 {
             bindings = <
 
-&mt LEFT_CONTROL L &mt  LALT G &mt LEFT_COMMAND D        &mt RIGHT_COMMAND H &mt RALT U &mt RIGHT_CONTROL O
-&lt 5 S            &lt 4 R     &lt 3 T                   &lt 3 N             &lt 4 E    &lt 5 A
-&mt LEFT_SHIFT I               &mt LC(LS(LALT)) SPACE    &sl_ignore_mods 1              &mt RIGHT_SHIFT C
+&mt LEFT_SHIFT L &mt LEFT_CONTROL G &mt LEFT_COMMAND D     &mt RIGHT_COMMAND H &mt RIGHT_CONTROL U &mt RIGHT_SHIFT O
+&lt 5 S          &lt 4 R            &lt 3 T                &lt 3 N             &lt 4 E             &lt 5 A
+&mt LALT I               &mt LC(LS(LALT)) SPACE            &sl_ignore_mods 1                       &mt RALT C
 
             >;
         };
@@ -430,7 +430,7 @@
 
             &kp V      &kp W      &kp M                              &kp Y      &kp F      &kp Z
             &kp J      &kp P      &kp K                              &kp B      &kp Q      &kp X
-            &kp CAPSLOCK          &lcmd_sticky_hold LCMD LCMD        &none                 &none
+            &kp CAPSLOCK          &lcmd_sticky_hold LCMD LCMD        &none                 &caps_word
 
             >;
         };
