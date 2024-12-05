@@ -49,7 +49,7 @@
             compatible = "zmk,behavior-sticky-key";
             #binding-cells = <1>;
             bindings = <&mo>;
-            release-after-ms = <200>;
+            release-after-ms = <300>;
             ignore-modifiers;
         };
         //Activates Layer 2
@@ -73,17 +73,6 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&sk>;
         };
-        //Does not deactivate layer
-        //When tapped, next key is Right Control + Key
-        //If held Right Control Key
-         rcntrl_sticky_hold: rcntrl_sticky_hold {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&sk>;
-        };
     };
 // ------------------------------------------------------------------------------------------------------ //
 //  ####################################################################################################  //
@@ -98,14 +87,14 @@
     //Switches to Alpha Caps Layer 2
     //Initiated on Layer 0
     combo_caps_layer {
-        timeout-ms = <50>;
+        timeout-ms = <100>;
         key-positions = <14 4>;
         bindings = <&sl_caps 2>;
         };
     //Next  Key on Layer 0 is Shifted
     //Initiated on Layer 0
     combo_layer_0_shift_next {
-        timeout-ms = <50>;
+        timeout-ms = <100>;
         key-positions = <13 1>;
         bindings = <&sk LSHFT>;
         layers = <0>;
@@ -113,7 +102,7 @@
    //Initiated on Layer 0
    //Output: Repeat Last Key
     combo_repeat_last_key {
-        timeout-ms = <50>;
+        timeout-ms = <100>;
         key-positions = <14 15>;
         bindings = <&key_repeat>;
         layers = <0>;
@@ -138,7 +127,7 @@
    //Output: Escape
     combo_esc {
         timeout-ms = <50>;
-        key-positions = <1 2>;
+        key-positions = <4 5>;
         bindings = <&kp ESCAPE>;
         layers = <0>;
         };
@@ -146,7 +135,7 @@
     //Output: Tab
     combo_tab {
         timeout-ms = <50>;
-        key-positions = <7 8>;
+        key-positions = <12 13>;
         bindings = <&kp TAB>;
         layers = <0>;
         };
@@ -177,7 +166,230 @@
 // ------------------------------------------------------------------------------------------------------ //
 //  ########################################## SYMBOL COMBOS ###########################################  //
 // ------------------------------------------------------------------------------------------------------ //
-
+   //Output: ":"
+    combo_colon {
+        timeout-ms = <50>;
+        key-positions = <3 4>;
+        bindings = <&kp COLON>;
+        layers = <0>;
+    };
+   //Output: "$"
+    combo_dollar {
+        timeout-ms = <50>;
+        key-positions = <4 11>;
+        bindings = <&kp DLLR>;
+        layers = <0>;
+    };
+   //Output: "%"
+    combo_percent {
+        timeout-ms = <50>;
+        key-positions = <9 4>;
+        bindings = <&kp PERCENT>;
+        layers = <0>;
+    };
+   //Output: "("
+    combo_left_parenthesis {
+        timeout-ms = <50>;
+        key-positions = <8 9>;
+        bindings = <&kp LPAR>;
+        layers = <0>;
+    };
+   //Output: ")"
+    combo_right_parenthesis {
+        timeout-ms = <50>;
+        key-positions = <2 3>;
+        bindings = <&kp RPAR>;
+        layers = <0>;
+    };
+   //Output: "{"
+    combo_left_brace {
+        timeout-ms = <50>;
+        key-positions = <7 10>;
+        bindings = <&kp LBRC>;
+        layers = <0>;
+    };
+   //Output: "}"
+    combo_right_brace {
+        timeout-ms = <50>;
+        key-positions = <1 4>;
+        bindings = <&kp RBRC>;
+        layers = <0>;
+    };
+   //Output: "["
+    combo_left_bracket {
+        timeout-ms = <50>;
+        key-positions = <6 11>;
+        bindings = <&kp LBKT>;
+        layers = <0>;
+    };
+   //Output: "]"
+    combo_right_bracket {
+        timeout-ms = <50>;
+        key-positions = <0 5>;
+        bindings = <&kp RBKT>;
+        layers = <0>;
+    };
+   //Output: "<"
+    combo_less_than {
+        timeout-ms = <50>;
+        key-positions = <12 6>;
+        bindings = <&kp LT>;
+        layers = <0>;
+    };
+   //Output: ">"
+    combo_greater_than {
+        timeout-ms = <50>;
+        key-positions = <11 15>;
+        bindings = <&kp GT>;
+        layers = <0>;
+    };
+   //Output: ","
+    combo_comma {
+        timeout-ms = <50>;
+        key-positions = <3 5>;
+        bindings = <&kp COMMA>;
+        layers = <0>;
+    };
+   //Output: ";"
+    combo_semi_colon {
+        timeout-ms = <50>;
+        key-positions = <9 15>;
+        bindings = <&kp SEMICOLON>;
+        layers = <0>;
+        };
+   //Output: "."
+    combo_period {
+        timeout-ms = <50>;
+        key-positions = <10 11>;
+        bindings = <&kp DOT>;
+        layers = <0>;
+        };
+   //Output: "/"
+    combo_slash {
+        timeout-ms = <50>;
+        key-positions = <9 11>;
+        bindings = <&kp FSLH>;
+        layers = <0>;
+        };
+   //Output: " ' "
+    combo_single_quote {
+        timeout-ms = <50>;
+        key-positions = <1 2>;
+        bindings = <&kp APOS>;
+        layers = <0>;
+    };
+   //Output: ' " '
+    combo_double_quotes {
+        timeout-ms = <50>;
+        key-positions = <0 1>;
+        bindings = <&kp DQT>;
+        layers = <0>;
+    };
+   //Output: " ` "
+    combo_grave {
+        timeout-ms = <50>;
+        key-positions = <0 2>;
+        bindings = <&kp GRAVE>;
+        layers = <0>;
+    };
+   //Output: "?"
+    combo_question {
+        timeout-ms = <50>;
+        key-positions = <6 8>;
+        bindings = <&kp QMARK>;
+        layers = <0>;
+    };
+   //Output: "!"
+    combo_exclamation {
+        timeout-ms = <50>;
+        key-positions = <6 7>;
+        bindings = <&kp EXCL>;
+        layers = <0>;
+    };
+   //Output: "#"
+    combo_hash {
+        timeout-ms = <50>;
+        key-positions = <7 8>;
+        bindings = <&kp HASH>;
+        layers = <0>;
+    };
+   //Output: "|"
+    combo_pipe {
+        timeout-ms = <50>;
+        key-positions = <1 6>;
+        bindings = <&kp PIPE>;
+        layers = <0>;
+    };
+   //Output: "&"
+    combo_ampersand {
+        timeout-ms = <50>;
+        key-positions = <1 8>;
+        bindings = <&kp AMPS>;
+        layers = <0>;
+    };
+   //Output: "~"
+    combo_tilde {
+        timeout-ms = <50>;
+        key-positions = <11 0>;
+        bindings = <&kp TILDE>;
+        layers = <0>;
+    };
+   //Output: "_"
+    combo_underscore {
+        timeout-ms = <50>;
+        key-positions = <6 5>;
+        bindings = <&kp UNDER>;
+        layers = <0>;
+    };
+   //Output: "="
+    combo_equal {
+        timeout-ms = <50>;
+        key-positions = <9 2>;
+        bindings = <&kp EQUAL>;
+        layers = <0>;
+    };
+   //Output: "+"
+    combo_plus {
+        timeout-ms = <50>;
+        key-positions = <8 3>;
+        bindings = <&kp PLUS>;
+        layers = <0>;
+    };
+   //Output: "*"
+    combo_asterisk {
+        timeout-ms = <50>;
+        key-positions = <1 10>;
+        bindings = <&kp ASTRK>;
+        layers = <0>;
+    };
+   //Output: "-"
+    combo_minus {
+        timeout-ms = <50>;
+        key-positions = <7 4>;
+        bindings = <&kp MINUS>;
+        layers = <0>;
+    };
+   //Output: "@"
+    combo_at {
+        timeout-ms = <50>;
+        key-positions = <9 5>;
+        bindings = <&kp AT>;
+        layers = <0>;
+    };
+   //Output: "\"
+    combo_backslash {
+        timeout-ms = <50>;
+        key-positions = <3 11>;
+        bindings = <&kp BSLH>;
+        layers = <0>;
+    };
+   //Output: "^"
+    combo_caret {
+        timeout-ms = <50>;
+        key-positions = <6 2>;
+        bindings = <&kp CARET>;
+        layers = <0>;
+    };
 };
 // ------------------------------------------------------------------------------------------------------ //
 //  ####################################################################################################  //
@@ -218,7 +430,7 @@
 
             &kp V      &kp W      &kp M                              &kp Y      &kp F      &kp Z
             &kp J      &kp P      &kp K                              &kp B      &kp Q      &kp X
-            &none                 &lcmd_sticky_hold LCMD LCMD        &rcntrl_sticky_hold RIGHT_CONTROL RIGHT_CONTROL   &none
+            &none                 &lcmd_sticky_hold LCMD LCMD        &none                 &none
 
             >;
         };
