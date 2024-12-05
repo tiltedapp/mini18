@@ -42,37 +42,7 @@
 //  ####################################################################################################  //
 // ------------------------------------------------------------------------------------------------------ //
     behaviors {
-        //Activates Layer 1
-        //One shot sticky layer
-        //Any key pressed (except mod keys (cmd, shift etc.)) will trigger home layer switch
-        sl_ignore_mods: sticky_layer_ignore_mods {
-            compatible = "zmk,behavior-sticky-key";
-            #binding-cells = <1>;
-            bindings = <&mo>;
-            release-after-ms = <200>;
-            ignore-modifiers;
-        };
-        //Activates Layer 4
-        //One shot sticky layer
-        //Any key pressed (except mod keys (cmd, shift etc.)) will trigger home layer switch
-        sl_caps: sl_caps {
-            compatible = "zmk,behavior-sticky-key";
-            #binding-cells = <1>;
-            bindings = <&mo>;
-            release-after-ms = <200>;
-            ignore-modifiers;
-        };
-        //Does not deactivate layer
-        //When tapped, next key is Right Command + Key
-        //If held Right Command Key
-         cmd_sticky_hold: cmd_sticky_hold {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&sk>;
-        };
+
     };
 // ------------------------------------------------------------------------------------------------------ //
 //  ####################################################################################################  //
@@ -84,60 +54,11 @@
 // ------------------------------------------------------------------------------------------------------ //
 //  ######################################### FUNCTION COMBOS ##########################################  //
 // ------------------------------------------------------------------------------------------------------ //
-    //Switches to Alpha Caps Layer 2
-    //Initiated on Layer 0
-    combo_caps_layer {
-        timeout-ms = <50>;
-        key-positions = <10 20>;
-        bindings = <&sl_caps 2>;
-        layers = <0>;
-        };
-    //Next  Key on Layer 0 is Shifted
-    //Initiated on Layer 0
-    combo_layer_0_shift_next {
-        timeout-ms = <50>;
-        key-positions = <9 3>;
-        bindings = <&sk LSHFT>;
-        layers = <0>;
-        };
-   //Initiated on Layer 0
-   //Output: Repeat Last Key
-    combo_repeat_last_key {
-        timeout-ms = <50>;
-        key-positions = <10 16>;
-        bindings = <&key_repeat>;
-        layers = <0>;
-        };
-    //Initiated on Layer 0
    //Output: Enter
     combo_enter {
         timeout-ms = <50>;
         key-positions = <7 14>;
         bindings = <&kp ENTER>;
-        layers = <0>;
-        };
-    //Initiated on Layer 0
-    //Output: Backspace
-    combo_backspace {
-        timeout-ms = <50>;
-        key-positions = <14 15>;
-        bindings = <&kp BACKSPACE>;
-        layers = <0>;
-        };
-    //Initiated on Layer 0
-   //Output: Escape
-    combo_esc {
-        timeout-ms = <50>;
-        key-positions = <3 4>;
-        bindings = <&kp ESCAPE>;
-        layers = <0>;
-        };
-    //Initiated on Layer 0
-    //Output: Tab
-    combo_tab {
-        timeout-ms = <50>;
-        key-positions = <6 7>;
-        bindings = <&kp TAB>;
         layers = <0>;
         };
 // ------------------------------------------------------------------------------------------------------ //
@@ -167,8 +88,8 @@
             bindings = <
 
            &kp L      &kp G      &kp D                              &kp H      &kp U      &kp O
-           &lt 5 S    &lt 4 R    &lt 3 T                            &lt 3 N    &lt 4 E    &lt 5 A
-           &mt LEFT_SHIFT I      &mt LC(LS(LALT)) SPACE             &sl_ignore_mods 1     &mt RIGHT_SHIFT C
+           &kp S      &kp R      &kp T                              &kp N      &kp E      &kp A
+           &kp I                 &kp SPACE                          &kp BACKSPACE     &kp C
 
             >;
         };
