@@ -63,9 +63,20 @@
             ignore-modifiers;
         };
         //Does not deactivate layer
-        //When tapped, next key is Right Command + Key
-        //If held Right Command Key
-         cmd_sticky_hold: cmd_sticky_hold {
+        //When tapped, next key is Left Command + Key
+        //If held Left Command Key
+         lcmd_sticky_hold: lcmd_sticky_hold {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&sk>;
+        };
+        //Does not deactivate layer
+        //When tapped, next key is Right Control + Key
+        //If held Right Control Key
+         rcntrl_sticky_hold: rcntrl_sticky_hold {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -207,7 +218,7 @@
 
             &kp V      &kp W      &kp M                              &kp Y      &kp F      &kp Z
             &kp J      &kp P      &kp K                              &kp B      &kp Q      &kp X
-            &none                 &kp LEFT_COMMAND                   &none                 &none
+            &none                 &lcmd_sticky_hold LCMD LCMD        &rcntrl_sticky_hold RIGHT_CONTROL RIGHT_CONTROL   &none
 
             >;
         };
